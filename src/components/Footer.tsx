@@ -5,7 +5,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: <Github size={20} />, url: "https://github.com/yourusername" },
+    { icon: <Github size={20} />, url: "https://github.com/Arsan-sk" },
     { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/yourusername" },
     { icon: <Twitter size={20} />, url: "https://twitter.com/yourusername" },
     { icon: <Instagram size={20} />, url: "https://instagram.com/yourusername" },
@@ -23,7 +23,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col items-center">
           <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent mb-6">
-            Your Name
+            Shaikh Mohd Arsan
           </h3>
           
           <div className="flex space-x-4 mb-8">
@@ -48,7 +48,7 @@ const Footer = () => {
           </button>
           
           <p className="text-gray-500 text-sm text-center">
-            © {year} Your Name. All rights reserved. <br />
+            © {year} Shaikh Mohd Arsan. All rights reserved. <br />
             Built with React & Tailwind CSS
           </p>
         </div>

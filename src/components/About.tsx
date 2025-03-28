@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { User, Code, Palette, Cpu } from "lucide-react";
+import { User, Code, Palette, Cpu, BrainCircuit } from "lucide-react";
 
 const skills = [
   { name: "HTML/CSS", percentage: 90 },
@@ -9,6 +9,7 @@ const skills = [
   { name: "TypeScript", percentage: 75 },
   { name: "UI/UX Design", percentage: 70 },
   { name: "Node.js", percentage: 65 },
+  { name: "AI Tools & Prompting", percentage: 85 },
 ];
 
 const services = [
@@ -23,6 +24,12 @@ const services = [
     title: "UI/UX Design",
     description:
       "Creating intuitive and engaging user interfaces with a focus on user experience and accessibility.",
+  },
+  {
+    icon: <BrainCircuit className="h-10 w-10 text-green-500" />,
+    title: "AI-Powered Development",
+    description:
+      "Leveraging cutting-edge AI tools to accelerate development workflows, create innovative solutions, and solve complex problems.",
   },
   {
     icon: <Cpu className="h-10 w-10 text-pink-500" />,
