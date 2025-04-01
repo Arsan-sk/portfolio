@@ -1,5 +1,4 @@
-
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { User, Code, Palette, Cpu, BrainCircuit } from "lucide-react";
 
 const skills = [
@@ -40,12 +39,17 @@ const services = [
 ];
 
 const About = () => {
+  const bioRef = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-skill");
+            const el = entry.target as HTMLElement;
+            const width = el.dataset.width;
+            el.style.setProperty('--width', width);
+            el.classList.add('animate-skill');
           }
         });
       },
@@ -56,39 +60,66 @@ const About = () => {
       observer.observe(el);
     });
 
-    return () => observer.disconnect();
+    // Add fade-in effect for bio paragraphs
+    const bioObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const paragraphs = entry.target.querySelectorAll('p');
+            paragraphs.forEach((p, index) => {
+              setTimeout(() => {
+                p.classList.add('opacity-100');
+                p.classList.remove('opacity-0', 'translate-y-4');
+              }, index * 150);
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (bioRef.current) {
+      bioObserver.observe(bioRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+      bioObserver.disconnect();
+    };
   }, []);
 
   return (
     <section id="about" className="py-24 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 animate-fade-in">
             About <span className="text-purple-500">Me</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div data-aos="fade-right">
+          <div data-aos="fade-right" ref={bioRef} className="space-y-6">
             <h3 className="text-2xl font-bold mb-6 flex items-center">
-              <User className="mr-3 text-purple-500" /> Who I Am
+              <User className="mr-3 text-purple-500 animate-pulse" /> Who I Am
             </h3>
-            <p className="text-gray-300 mb-6">
-              I'm a passionate web developer and designer with a strong
-              background in creating interactive digital experiences. With [X]
-              years of experience, I specialize in building modern web
-              applications that are both beautiful and functional.
+            <p className="text-gray-300 mb-6 transition-all duration-500 opacity-0 translate-y-4">
+              I am a technology enthusiast, problem solver, and lifelong learner, passionate about exploring the intersection of AI, cybersecurity, full-stack development, and algorithmic problem-solving. With a strong foundation in both software development and system analysis, I focus on building efficient, scalable, and secure digital solutions.
             </p>
-            <p className="text-gray-300 mb-6">
-              My journey in tech began when I [your story here]. Since then,
-              I've worked on various projects ranging from [types of projects]
-              for [types of clients/companies].
+            <p className="text-gray-300 mb-6 transition-all duration-500 opacity-0 translate-y-4">
+              My journey in tech started with a curiosity for how things work, evolving into a deeper understanding of software engineering, machine learning, and cybersecurity. Over time, I have worked on projects ranging from AI-driven applications to secure web platforms, always striving to combine logic, efficiency, and creativity in my work.
             </p>
-            <p className="text-gray-300">
-              When I'm not coding, you can find me [your hobbies/interests].
-              These activities help me maintain a creative mindset and bring
-              fresh perspectives to my work.
+            <p className="text-gray-300 mb-6 transition-all duration-500 opacity-0 translate-y-4">
+              I enjoy tackling complex challenges, whether it's optimizing algorithms, improving system security, or developing intelligent applications. I strongly believe in continuous learning and keeping up with the latest advancements to refine my skills and contribute to meaningful projects.
+            </p>
+            <p className="text-gray-300 mb-6 transition-all duration-500 opacity-0 translate-y-4">
+              Beyond coding, I actively research emerging technologies, contribute to open-source, and share insights through technical discussions and writing. My approach is rooted in critical thinking, structured problem-solving, and a desire to innovate responsibly.
+            </p>
+            <p className="text-purple-500 transition-all duration-500 opacity-0 translate-y-4 italic border-l-4 border-purple-500 pl-4">
+              "Superposition of ideas, collapsing into action when observed. ✨"
+            </p>
+            <p className="text-gray-300 transition-all duration-500 opacity-0 translate-y-4 font-medium">
+              <span className="text-purple-400">📌</span> Always learning, always building—one challenge at a time. Let's create something impactful. <span className="text-blue-400 animate-bounce inline-block">🚀</span>
             </p>
           </div>
 

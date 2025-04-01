@@ -67,7 +67,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 flex flex-col items-center text-center z-10">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fadeInUp">
-          Hello, I'm <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Your Name</span>
+          Hello, I'm <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Shaikh Mohd Arsan</span>
         </h1>
         
         <h2 className="text-2xl md:text-3xl mb-8 h-12">

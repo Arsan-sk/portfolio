@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -15,12 +14,13 @@ type Project = {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with user authentication, product management, and payment processing.",
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Modern Web Portfolio",
+    description:
+      "A dynamic personal portfolio built with React and Tailwind CSS, featuring responsive design and interactive elements.",
+    image: "/projects/project1.jpg",
+    tags: ["React", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/Arsan-sk/My_Portfolio",
+    demo: "https://your-portfolio.com",
   },
   {
     id: 2,
@@ -117,7 +117,7 @@ const Projects = () => {
 
         <div className="mt-16 text-center">
           <a 
-            href="https://github.com/yourusername" 
+            href="https://github.com/Arsan-sk" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-1"

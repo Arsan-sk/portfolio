@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
@@ -43,20 +42,20 @@ const Contact = () => {
     {
       icon: <Mail className="h-12 w-12 p-3 bg-purple-500/20 text-purple-500 rounded-xl" />,
       title: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com",
+      value: "skarsan02@gmail.com",
+      link: "mailto:skarsan02@gmail.com",
     },
     {
       icon: <Phone className="h-12 w-12 p-3 bg-blue-500/20 text-blue-500 rounded-xl" />,
       title: "Phone",
-      value: "+1 (123) 456-7890",
-      link: "tel:+11234567890",
+      value: "9284086903",
+      link: "tel:9284086903",
     },
     {
       icon: <MapPin className="h-12 w-12 p-3 bg-pink-500/20 text-pink-500 rounded-xl" />,
       title: "Location",
-      value: "Your City, Country",
-      link: "https://maps.google.com",
+      value: "Bhiwandi 421302",
+      link: "https://maps.google.com/?q=Bhiwandi+421302",
     },
   ];
 
