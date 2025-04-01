@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -12,9 +11,14 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Debug log
+    console.log("Index component mounted");
+    
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
+      console.log("Loading completed");
+      
       toast({
         title: "Welcome to my portfolio!",
         description: "Feel free to explore and get in touch.",
@@ -25,6 +29,7 @@ const Index = () => {
   }, []);
 
   if (isLoading) {
+    console.log("Rendering loading state");
     return (
       <div className="h-screen w-full flex items-center justify-center bg-black">
         <div className="text-center">
@@ -35,6 +40,7 @@ const Index = () => {
     );
   }
 
+  console.log("Rendering main content");
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />

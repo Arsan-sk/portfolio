@@ -105,8 +105,40 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out forwards',
 				'skill': 'skill-progress 1s ease-out forwards'
-			}
+			},
+			transformStyle: {
+				'preserve-3d': 'preserve-3d',
+			},
+			perspective: {
+				'1000': '1000px',
+				'2000': '2000px',
+			},
+			backfaceVisibility: {
+				'hidden': 'hidden',
+			},
+			rotate: {
+				'y-180': 'rotateY(180deg)',
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function({ addUtilities }: { addUtilities: Function }) {
+			const newUtilities = {
+				'.preserve-3d': {
+					'transform-style': 'preserve-3d',
+				},
+				'.perspective-1000': {
+					'perspective': '1000px',
+				},
+				'.backface-hidden': {
+					'backface-visibility': 'hidden',
+				},
+				'.rotate-y-180': {
+					'transform': 'rotateY(180deg)',
+				},
+			}
+			addUtilities(newUtilities)
+		},
+	],
 } satisfies Config;

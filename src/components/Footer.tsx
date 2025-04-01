@@ -5,9 +5,9 @@ const Footer = () => {
   
   const socialLinks = [
     { icon: <Github size={20} />, url: "https://github.com/Arsan-sk" },
-    { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/yourusername" },
+    { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/" },
     { icon: <Twitter size={20} />, url: "https://twitter.com/yourusername" },
-    { icon: <Instagram size={20} />, url: "https://instagram.com/yourusername" },
+    { icon: <Instagram size={20} />, url: "https://instagram.com/@arsan_sk_09" },
   ];
 
   const scrollToTop = () => {
