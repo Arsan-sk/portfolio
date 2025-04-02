@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { useTheme } from "@/context/ThemeContext";
 
 const Contact = () => {
+  const { theme } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,14 +62,14 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gray-900">
+    <section id="contact" className={`py-24 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
             Get In <span className="text-purple-500">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
-          <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
+          <p className={`mt-6 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
             Have a project in mind or want to collaborate? Feel free to reach out to me through any of the channels below or by filling out the contact form.
           </p>
         </div>
@@ -77,25 +79,33 @@ const Contact = () => {
             <a
               key={index}
               href={info.link}
-              className="bg-gray-800 p-6 rounded-xl hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 border border-gray-700 hover:border-purple-500 flex flex-col items-center text-center group"
+              className={`p-6 rounded-xl hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 border hover:border-purple-500 flex flex-col items-center text-center group ${
+                theme === 'dark'
+                  ? 'bg-gray-800 border-gray-700'
+                  : 'bg-white border-gray-200'
+              }`}
               target="_blank"
               rel="noopener noreferrer"
             >
               <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 {info.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2">{info.title}</h3>
-              <p className="text-gray-400">{info.value}</p>
+              <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>{info.title}</h3>
+              <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{info.value}</p>
             </a>
           ))}
         </div>
 
-        <div className="bg-gray-800 rounded-xl p-8 max-w-3xl mx-auto border border-gray-700">
-          <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+        <div className={`rounded-xl p-8 max-w-3xl mx-auto border ${
+          theme === 'dark'
+            ? 'bg-gray-800 border-gray-700'
+            : 'bg-white border-gray-200 shadow-md'
+        }`}>
+          <h3 className={`text-2xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>Send Me a Message</h3>
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+                <label htmlFor="name" className={`block text-sm font-medium mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                   Your Name
                 </label>
                 <input
@@ -105,12 +115,16 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
+                  className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ${
+                    theme === 'dark'
+                      ? 'bg-gray-700 border-gray-600 text-white'
+                      : 'bg-gray-100 border-gray-200 text-gray-900'
+                  } border`}
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+                <label htmlFor="email" className={`block text-sm font-medium mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                   Your Email
                 </label>
                 <input
@@ -120,13 +134,17 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
+                  className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ${
+                    theme === 'dark'
+                      ? 'bg-gray-700 border-gray-600 text-white'
+                      : 'bg-gray-100 border-gray-200 text-gray-900'
+                  } border`}
                   placeholder="john@example.com"
                 />
               </div>
             </div>
             <div className="mb-6">
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2">
+              <label htmlFor="subject" className={`block text-sm font-medium mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                 Subject
               </label>
               <input
@@ -136,12 +154,16 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
+                className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ${
+                  theme === 'dark'
+                    ? 'bg-gray-700 border-gray-600 text-white'
+                    : 'bg-gray-100 border-gray-200 text-gray-900'
+                } border`}
                 placeholder="Project Inquiry"
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+              <label htmlFor="message" className={`block text-sm font-medium mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                 Message
               </label>
               <textarea
@@ -151,7 +173,11 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white resize-none"
+                className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none ${
+                  theme === 'dark'
+                    ? 'bg-gray-700 border-gray-600 text-white'
+                    : 'bg-gray-100 border-gray-200 text-gray-900'
+                } border`}
                 placeholder="Hello, I'm interested in working with you on a project..."
               ></textarea>
             </div>
