@@ -33,6 +33,31 @@
     --ring: 222.2 84% 4.9%;
  
     --radius: 0.5rem;
+
+    /* Custom theme colors for light mode */
+    --main-bg: 210 40% 98%;
+    --card-bg: 0 0% 100%;
+    --section-bg-primary: 210 40% 96%;
+    --section-bg-secondary: 0 0% 98%;
+    --text-primary: 222 47% 11%;
+    --text-secondary: 215 16% 47%;
+    --accent-purple: 270 76% 55%;
+    --accent-blue: 214 100% 60%;
+    --accent-pink: 330 81% 60%;
+    --gradient-start: 270 76% 55%;
+    --gradient-end: 214 100% 60%;
+    --card-border: 214 32% 91%;
+    --shadow-color: 210 20% 98%;
+    --shadow-strong: 215 25% 27% / 0.1;
+    
+    /* Additional variables for sections */
+    --hero-bg-start: 210 40% 96%;
+    --hero-bg-end: 0 0% 100%;
+    --experience-bg: 210 40% 96%;
+    --certifications-bg: 0 0% 98%;
+    --projects-bg: 210 40% 98%;
+    --blog-bg: 0 0% 98%;
+    --contact-bg: 210 40% 96%;
   }
  
   .dark {
@@ -63,6 +88,31 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    /* Custom theme colors for dark mode */
+    --main-bg: 222 47% 11%;
+    --card-bg: 217 33% 17%;
+    --section-bg-primary: 222 47% 11%;
+    --section-bg-secondary: 215 28% 17%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20% 65%;
+    --accent-purple: 270 76% 55%;
+    --accent-blue: 214 100% 60%;
+    --accent-pink: 330 81% 60%;
+    --gradient-start: 270 76% 55%;
+    --gradient-end: 214 100% 60%;
+    --card-border: 217 33% 17%;
+    --shadow-color: 215 28% 17%;
+    --shadow-strong: 215 25% 27% / 0.4;
+    
+    /* Additional variables for sections */
+    --hero-bg-start: 220 47% 11%;
+    --hero-bg-end: 215 28% 17%;
+    --experience-bg: 222 47% 11%;
+    --certifications-bg: 215 28% 17%;
+    --projects-bg: 215 25% 15%;
+    --blog-bg: 222 47% 11%;
+    --contact-bg: 215 28% 17%;
   }
 }
  
@@ -71,16 +121,20 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  .section-transition {
+    @apply transition-colors duration-300;
   }
 }
 
-/* Scrollbar Styling */
+/* Theme-specific scrollbar styles */
 @layer utilities {
   /* Firefox */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #6366f1 #111827;
+    scrollbar-color: hsl(var(--accent-purple)) hsl(var(--card-bg));
   }
 
   /* Chrome, Edge, and Safari */
@@ -90,14 +144,33 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: #111827;
+    background: hsl(var(--card-bg));
     border-radius: 5px;
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #6366f1;
+    background-color: hsl(var(--accent-purple));
     border-radius: 14px;
-    border: 2px solid #111827;
+    border: 2px solid hsl(var(--card-bg));
+  }
+
+  /* Light mode scrollbar overrides */
+  .light *::-webkit-scrollbar-track {
+    background: hsl(var(--card-bg));
+  }
+  
+  .light *::-webkit-scrollbar-thumb {
+    border: 2px solid hsl(var(--card-bg));
+  }
+
+  /* Hide scrollbars for certain elements */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
   }
 }
 
@@ -359,16 +432,6 @@
 /* Make sure JavaScript loads this properly */
 .skill-bar.animate-skill {
   width: var(--width, 0%);
-}
-
-/* Custom scroll for horizontal sections */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 /* 3D Card Effect */
