@@ -1,10 +1,12 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ui/ThemeToggle";
+import { useTheme } from "@/context/ThemeContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme } = useTheme();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -29,7 +31,9 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900/90 backdrop-blur-md py-2 shadow-lg"
+          ? theme === 'dark'
+            ? "bg-gray-900/90 backdrop-blur-md py-2 shadow-lg"
+            : "bg-white/90 backdrop-blur-md py-2 shadow-lg"
           : "bg-transparent py-6"
       }`}
     >
@@ -43,33 +47,45 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {["home", "about", "projects", "contact"].map((item) => (
+          <div className="hidden md:flex items-center space-x-8">
+            {["home", "about", "experience", "certifications", "projects", "blog", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="text-white hover:text-purple-500 transition-colors capitalize"
+                className={`transition-colors capitalize hover:text-purple-500 ${
+                  theme === 'dark' ? 'text-white' : 'text-gray-800'
+                }`}
               >
                 {item}
               </button>
             ))}
+            
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button className="md:hidden" onClick={toggleMenu}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Toggle with Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-4">
+            <ThemeToggle />
+            <button onClick={toggleMenu} className={theme === 'dark' ? 'text-white' : 'text-gray-800'}>
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 bg-gray-800 rounded-lg p-4 animate-fadeIn">
+          <div className={`md:hidden mt-4 rounded-lg p-4 animate-fadeIn ${
+            theme === 'dark' ? 'bg-gray-800' : 'bg-white shadow-md'
+          }`}>
             <div className="flex flex-col space-y-4">
-              {["home", "about", "projects", "contact"].map((item) => (
+              {["home", "about", "experience", "certifications", "projects", "blog", "contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className="text-white hover:text-purple-500 transition-colors capitalize py-2"
+                  className={`transition-colors capitalize py-2 hover:text-purple-500 ${
+                    theme === 'dark' ? 'text-white' : 'text-gray-800'
+                  }`}
                 >
                   {item}
                 </button>
