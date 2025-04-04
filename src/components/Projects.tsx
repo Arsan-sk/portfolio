@@ -49,12 +49,12 @@ const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: "AI Content Generator",
-    description: "An AI-powered application that generates content based on user prompts using advanced language models.",
+    title: "QuizKTC Comprehensive Quiz App",
+    description: "A comprehensive quiz app that covers a wide range of topics, including history, science, math, and more.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
-    tags: ["Next.js", "OpenAI API", "Tailwind CSS", "TypeScript"],
+    tags: ["Node.js", "Postgress", "Tailwind CSS", "TypeScript"],
     category: "AI",
-    github: "https://github.com/Arsan-sk",
+    github: "https://github.com/Arsan-sk/QuizKnightChallenge",
     demo: "https://demo.com",
   },
   {

@@ -12,6 +12,7 @@ interface BlogPost {
   image: string;
   category: string;
   slug: string;
+  externalUrl?: string;
 }
 
 const blogPosts: BlogPost[] = [
@@ -23,7 +24,8 @@ const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     image: "https://placehold.co/600x400/2563eb/ffffff?text=React+TypeScript",
     category: "Development",
-    slug: "getting-started-with-react-typescript"
+    slug: "getting-started-with-react-typescript",
+    externalUrl: "https://medium.com/@skarsan02/tailwind-css-the-modern-way-to-style-your-web-applications-7ba9c8e61b08"
   },
   {
     id: 2,
@@ -33,7 +35,8 @@ const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     image: "https://placehold.co/600x400/8b5cf6/ffffff?text=Tailwind+CSS",
     category: "Design",
-    slug: "designing-ui-components-tailwind-css"
+    slug: "designing-ui-components-tailwind-css",
+    externalUrl: "https://medium.com/@skarsan02/tailwind-css-the-modern-way-to-style-your-web-applications-7ba9c8e61b08"
   },
   {
     id: 3,
@@ -43,7 +46,8 @@ const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     image: "https://placehold.co/600x400/ec4899/ffffff?text=AI+Web+Dev",
     category: "AI",
-    slug: "future-of-ai-web-development"
+    slug: "future-of-ai-web-development",
+    externalUrl: "https://medium.com/@skarsan02/tailwind-css-the-modern-way-to-style-your-web-applications-7ba9c8e61b08"
   }
 ];
 
@@ -138,7 +142,9 @@ const Blog = () => {
                 </p>
                 
                 <a 
-                  href={`/blog/${post.slug}`} 
+                  href={post.externalUrl || `/blog/${post.slug}`}
+                  target={post.externalUrl ? "_blank" : ""}
+                  rel={post.externalUrl ? "noopener noreferrer" : ""}
                   className="inline-flex items-center text-purple-500 hover:text-purple-600 transition-colors"
                 >
                   Read More <ArrowRight className="ml-1 h-4 w-4" />

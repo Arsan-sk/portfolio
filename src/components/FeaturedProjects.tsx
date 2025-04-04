@@ -17,32 +17,32 @@ interface FeaturedProject {
 const featuredProjects: FeaturedProject[] = [
   {
     id: 1,
-    title: "Algorithm 8.0 Hackathon Project",
-    description: "VR application with hand gesture recognition for controlling virtual interfaces. Won 2nd prize at the national hackathon among 45 teams.",
-    image: "https://placehold.co/800x400/a855f7/ffffff?text=VR+Gesture+Control",
-    tags: ["React", "Three.js", "TensorFlow.js", "WebXR"],
-    github: "https://github.com/Arsan-sk/vr-gesture-control",
-    demo: "https://vr-gesture-demo.vercel.app",
+    title: "QuizKTC Comprehensive Quiz App",
+    description: "A comprehensive quiz app that covers a wide range of topics, including history, science, math, and more.",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
+    tags: ["Node.js", "Postgress", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/Arsan-sk/QuizKnightChallenge",
+    demo: "https://demo.com",
     featured: true
   },
   {
     id: 2,
+    title: "Deaf Peech Asistant (Open Source)",
+    description: "An AI powered Deaf Speech Asistant which asist the deaf person in speech/specking training as they are deaf not dumb and with proper trainig they can also speack and the best example of this is hellen killer",
+    image: "https://placehold.co/800x400/a855f7/ffffff?text=Deaf+Speech+Assistant",
+    tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/Arsan-sk/Deaf-Speech-Assistant",
+    demo: "https://vr-gesture-demo.vercel.app",
+    featured: true
+  },
+  {
+    id: 3,
     title: "Portfolio Website",
     description: "A modern portfolio website with interactive elements, dark/light theme, and smooth animations - my digital showcase for projects and skills.",
     image: "https://placehold.co/800x400/8b5cf6/ffffff?text=Portfolio+Website",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/Arsan-sk/My_Portfolio",
     demo: "https://your-portfolio.com",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "AI Content Generator",
-    description: "An AI-powered application that generates content based on user prompts using advanced language models.",
-    image: "https://placehold.co/800x400/ec4899/ffffff?text=AI+Content+Generator",
-    tags: ["Next.js", "OpenAI API", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/Arsan-sk/ai-content-generator",
-    demo: "https://ai-generator-demo.vercel.app",
     featured: true
   }
 ];
