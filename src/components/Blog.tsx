@@ -18,14 +18,14 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Getting Started with React and TypeScript",
+    title: "Getting Started with  TypeScript",
     excerpt: "Learn how to set up a new project with React and TypeScript to build type-safe applications.",
     date: "October 15, 2023",
     readTime: "5 min read",
-    image: "https://placehold.co/600x400/2563eb/ffffff?text=React+TypeScript",
+    image: "https://placehold.co/600x400/2563eb/ffffff?text=TypeScript",
     category: "Development",
     slug: "getting-started-with-react-typescript",
-    externalUrl: "https://medium.com/@skarsan02/tailwind-css-the-modern-way-to-style-your-web-applications-7ba9c8e61b08"
+    externalUrl: "https://medium.com/@skarsan02/typescript-the-future-proof-language-for-scalable-javascript-development-4c0923cf4c77"
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const blogPosts: BlogPost[] = [
     image: "https://placehold.co/600x400/ec4899/ffffff?text=AI+Web+Dev",
     category: "AI",
     slug: "future-of-ai-web-development",
-    externalUrl: "https://medium.com/@skarsan02/tailwind-css-the-modern-way-to-style-your-web-applications-7ba9c8e61b08"
+    externalUrl: "https://medium.com/@skarsan02/ai-web-development-the-future-of-building-smarter-faster-and-more-personalized-websites-b3571d38d0a7"
   }
 ];
 
@@ -156,7 +156,7 @@ const Blog = () => {
         
         <div className="text-center mt-12">
           <a 
-            href="/blog" 
+            href="https://medium.com/@skarsan02" 
             className={`inline-flex items-center px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1 ${
               theme === 'dark' 
                 ? 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-700' 
