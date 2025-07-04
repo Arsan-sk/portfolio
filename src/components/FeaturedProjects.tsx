@@ -37,11 +37,11 @@ const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    description: "A modern portfolio website with interactive elements, dark/light theme, and smooth animations - my digital showcase for projects and skills.",
+    title: "Personal Finance Assistance",
+    description: "A CLI based Python project to manage a history records of personal finance fo income and expense with the date record where you can add and see summury for desired rangeof dates so that you can know summary of specific month our week.",
     image: "https://placehold.co/800x400/8b5cf6/ffffff?text=Portfolio+Website",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/Arsan-sk/My_Portfolio",
+    github: "https://github.com/Arsan-sk/Prsonal_Finance_Asistance",
     demo: "https://your-portfolio.com",
     featured: true
   }
