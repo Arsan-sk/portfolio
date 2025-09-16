@@ -29,7 +29,7 @@ const featuredProjects: FeaturedProject[] = [
     id: 2,
     title: "Deaf Peech Asistant (Open Source)",
     description: "An AI powered Deaf Speech Asistant which asist the deaf person in speech/specking training as they are deaf not dumb and with proper trainig they can also speack and the best example of this is hellen killer",
-    image: "https://placehold.co/800x400/a855f7/ffffff?text=Deaf+Speech+Assistant",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
     tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/Arsan-sk/Deaf-Speech-Assistant",
     demo: "https://vr-gesture-demo.vercel.app",
@@ -37,12 +37,12 @@ const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 3,
-    title: "Personal Finance Assistance",
-    description: "A CLI based Python project to manage a history records of personal finance fo income and expense with the date record where you can add and see summury for desired rangeof dates so that you can know summary of specific month our week.",
-    image: "https://placehold.co/800x400/8b5cf6/ffffff?text=Portfolio+Website",
+    title: "Waste Segregation and Analytics System",
+    description: "A web application that helps users segregate and manage waste effectively, promoting recycling and environmental sustainability.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/Arsan-sk/Prsonal_Finance_Asistance",
-    demo: "https://your-portfolio.com",
+    github: "https://github.com/Arsan-sk/SegSenseAI",
+    demo: "https://seg-sense.vercel.app/",
     featured: true
   }
 ];

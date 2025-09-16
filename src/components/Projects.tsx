@@ -29,13 +29,13 @@ const projectsData: Project[] = [
   },
   {
     id: 2,
-    title: "Portfolio Website",
-    description: "A modern portfolio website with interactive elements and smooth animations.",
+    title: "Focus Tube",
+    description: "A feature for youtubetomake our concentration on learning and help to avoid distraction",
     image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web Development",
-    github: "https://github.com/Arsan-sk",
-    demo: "https://demo.com",
+    github: "https://github.com/Arsan-sk/FocusTube",
+    demo: "https://focusxtube.vercel.app",
   },
   {
     id: 3,
