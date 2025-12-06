@@ -60,23 +60,23 @@ const Experience = () => {
       borderColor: "border-blue-500/50",
       textColor: "text-blue-600 dark:text-blue-400"
     },
-    {
-      title: "Open Source Contributions",
-      role: "Contributor",
-      description: "Actively contributed to open source projects, improving documentation and adding new features. Collaborated with developers worldwide to solve issues and enhance software quality.",
-      shortDescription: "Contributing to open source projects and collaborating with the community.",
-      highlights: [
-        "Fixed bugs in popular repositories",
-        "Improved documentation",
-        "Added new features",
-        "Participated in Hacktoberfest"
-      ],
-      timeline: "2021 - Present",
-      icon: <Briefcase className="h-6 w-6 text-green-500" />,
-      color: "from-green-500/20 to-emerald-500/20",
-      borderColor: "border-green-500/50",
-      textColor: "text-green-600 dark:text-green-400"
-    },
+    // {
+    //   title: "Open Source Contributions",
+    //   role: "Contributor",
+    //   description: "Actively contributed to open source projects, improving documentation and adding new features. Collaborated with developers worldwide to solve issues and enhance software quality.",
+    //   shortDescription: "Contributing to open source projects and collaborating with the community.",
+    //   highlights: [
+    //     "Fixed bugs in popular repositories",
+    //     "Improved documentation",
+    //     "Added new features",
+    //     "Participated in Hacktoberfest"
+    //   ],
+    //   timeline: "2021 - Present",
+    //   icon: <Briefcase className="h-6 w-6 text-green-500" />,
+    //   color: "from-green-500/20 to-emerald-500/20",
+    //   borderColor: "border-green-500/50",
+    //   textColor: "text-green-600 dark:text-green-400"
+    // },
     {
       title: "Web Development",
       role: "Freelancer",

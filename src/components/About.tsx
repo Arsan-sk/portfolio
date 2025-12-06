@@ -31,7 +31,7 @@ const skills: Skill[] = [
   },
   {
     name: "React",
-    level: 80,
+    level: 70,
     category: "Frontend",
     icon: "⚛️",
     color: "from-cyan-500 to-blue-500",
@@ -39,7 +39,7 @@ const skills: Skill[] = [
   },
   {
     name: "TypeScript",
-    level: 75,
+    level: 55,
     category: "Languages",
     icon: "📘",
     color: "from-blue-500 to-indigo-500",
@@ -47,7 +47,7 @@ const skills: Skill[] = [
   },
   {
     name: "UI/UX Design",
-    level: 70,
+    level: 75,
     category: "Design",
     icon: "🎨",
     color: "from-purple-500 to-pink-500",
@@ -55,7 +55,7 @@ const skills: Skill[] = [
   },
   {
     name: "Node.js",
-    level: 65,
+    level: 75,
     category: "Backend",
     icon: "🖥️",
     color: "from-green-500 to-emerald-500",
@@ -63,7 +63,7 @@ const skills: Skill[] = [
   },
   {
     name: "AI Tools & Prompting",
-    level: 85,
+    level: 95,
     category: "AI",
     icon: "🤖",
     color: "from-violet-500 to-purple-500",
@@ -71,20 +71,20 @@ const skills: Skill[] = [
   },
   {
     name: "Python",
-    level: 70,
+    level: 90,
     category: "Languages",
     icon: "🐍",
     color: "from-blue-400 to-green-400",
     description: "Data analysis, automation, and backend development with Python and its extensive library ecosystem."
   },
-  {
-    name: "DevOps",
-    level: 60,
-    category: "Operations",
-    icon: "⚙️",
-    color: "from-gray-500 to-slate-500",
-    description: "Implementing CI/CD pipelines, containerization, and deployment automation for faster development cycles."
-  },
+  // {
+  //   name: "DevOps",
+  //   level: 60,
+  //   category: "Operations",
+  //   icon: "⚙️",
+  //   color: "from-gray-500 to-slate-500",
+  //   description: "Implementing CI/CD pipelines, containerization, and deployment automation for faster development cycles."
+  // },
 ];
 
 const services = [
@@ -118,12 +118,12 @@ const services = [
     description:
       "Creating cross-platform mobile applications with React Native and other modern frameworks.",
   },
-  {
-    icon: <BrainCircuit className="h-10 w-10 text-teal-500" />,
-    title: "Data Analysis",
-    description:
-      "Extracting meaningful insights from data to drive decision-making and business strategy.",
-  },
+  // {
+  //   icon: <BrainCircuit className="h-10 w-10 text-teal-500" />,
+  //   title: "Data Analysis",
+  //   description:
+  //     "Extracting meaningful insights from data to drive decision-making and business strategy.",
+  // },
 ];
 
 const About = () => {
