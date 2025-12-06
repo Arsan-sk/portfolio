@@ -27,12 +27,12 @@ const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 2,
-    title: "Deaf Peech Asistant (Open Source)",
-    description: "An AI powered Deaf Speech Asistant which asist the deaf person in speech/specking training as they are deaf not dumb and with proper trainig they can also speack and the best example of this is hellen killer",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+    title: "Learning Management System - For Club",
+    description: "A Learning Management System for clubs that helps them manage their education flow between members and Lead Teachers",
+    image: "../public/projects/LMS.png",
     tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/Arsan-sk/Deaf-Speech-Assistant",
-    demo: "https://vr-gesture-demo.vercel.app",
+    github: "https://github.com/Arsan-sk/LMS",
+    demo: "https://elite-lms-xi.vercel.app/",
     featured: true
   },
   {

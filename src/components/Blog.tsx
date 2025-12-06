@@ -76,12 +76,12 @@ const Blog = () => {
   };
 
   return (
-    <section 
-      id="blog" 
-      className={`py-20 ${theme === 'dark' ? 'bg-gray-900' : 'bg-blue-50'}`}
+    <section
+      id="blog"
+      className={`py-12 md:py-20 ${theme === 'dark' ? 'bg-gray-900' : 'bg-blue-50'}`}
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
             My Blog
           </h2>
@@ -91,7 +91,7 @@ const Blog = () => {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -100,16 +100,15 @@ const Blog = () => {
           {blogPosts.map((post) => (
             <motion.article
               key={post.id}
-              className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl group ${
-                theme === 'dark' 
-                  ? 'bg-gray-800 hover:shadow-purple-500/20 border border-gray-700' 
+              className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl group flex flex-col sm:flex-row md:flex-col ${theme === 'dark'
+                  ? 'bg-gray-800 hover:shadow-purple-500/20 border border-gray-700'
                   : 'bg-white hover:shadow-purple-500/30 border border-gray-200'
-              }`}
+                }`}
               variants={itemVariants}
             >
-              <div className="h-48 overflow-hidden relative">
-                <img 
-                  src={post.image} 
+              <div className="h-48 sm:h-auto sm:w-1/3 md:w-full md:h-48 overflow-hidden relative shrink-0">
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -117,35 +116,36 @@ const Blog = () => {
                   {post.category}
                 </div>
               </div>
-              
-              <div className="p-6">
-                <div className="flex items-center text-xs mb-4">
-                  <span className={`flex items-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                    <Calendar className="h-3 w-3 mr-1" />
-                    {post.date}
-                  </span>
-                  <span className="mx-2">•</span>
-                  <span className={`flex items-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                    <Clock className="h-3 w-3 mr-1" />
-                    {post.readTime}
-                  </span>
+
+              <div className="p-6 flex flex-col justify-between grow">
+                <div>
+                  <div className="flex items-center text-xs mb-3 md:mb-4">
+                    <span className={`flex items-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <Calendar className="h-3 w-3 mr-1" />
+                      {post.date}
+                    </span>
+                    <span className="mx-2">•</span>
+                    <span className={`flex items-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <Clock className="h-3 w-3 mr-1" />
+                      {post.readTime}
+                    </span>
+                  </div>
+
+                  <h3 className={`text-lg md:text-xl font-bold mb-2 md:mb-3 group-hover:text-purple-500 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-800'
+                    }`}>
+                    {post.title}
+                  </h3>
+
+                  <p className={`mb-4 text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                    {post.excerpt}
+                  </p>
                 </div>
-                
-                <h3 className={`text-xl font-bold mb-3 group-hover:text-purple-500 transition-colors ${
-                  theme === 'dark' ? 'text-white' : 'text-gray-800'
-                }`}>
-                  {post.title}
-                </h3>
-                
-                <p className={`mb-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {post.excerpt}
-                </p>
-                
-                <a 
+
+                <a
                   href={post.externalUrl || `/blog/${post.slug}`}
                   target={post.externalUrl ? "_blank" : ""}
                   rel={post.externalUrl ? "noopener noreferrer" : ""}
-                  className="inline-flex items-center text-purple-500 hover:text-purple-600 transition-colors"
+                  className="inline-flex items-center text-purple-500 hover:text-purple-600 transition-colors mt-auto"
                 >
                   Read More <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
@@ -153,15 +153,14 @@ const Blog = () => {
             </motion.article>
           ))}
         </motion.div>
-        
+
         <div className="text-center mt-12">
-          <a 
-            href="https://medium.com/@skarsan02" 
-            className={`inline-flex items-center px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1 ${
-              theme === 'dark' 
-                ? 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-700' 
+          <a
+            href="https://medium.com/@skarsan02"
+            className={`inline-flex items-center px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1 ${theme === 'dark'
+                ? 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-700'
                 : 'bg-white text-gray-800 hover:bg-gray-50 border border-gray-200 hover:shadow-md'
-            }`}
+              }`}
           >
             View All Posts <ArrowRight className="ml-2 h-4 w-4" />
           </a>
@@ -171,4 +170,4 @@ const Blog = () => {
   );
 };
 
-export default Blog; 
+export default Blog;

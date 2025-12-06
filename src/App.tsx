@@ -7,7 +7,8 @@ import { useState, useEffect } from "react";
 import { ThemeProvider } from "@/context/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import CustomCursor from "./components/ui/CustomCursor";
+import UpdatingSoon from "./pages/UpdatingSoon";
+
 
 const queryClient = new QueryClient();
 
@@ -29,10 +30,11 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          {isMounted && <CustomCursor />}
+          <Sonner />
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/updating-soon" element={<UpdatingSoon />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Filter } from "lucide-react";
+import { Github, ExternalLink, Filter, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 import FeaturedProjects from "./FeaturedProjects";
@@ -13,6 +13,8 @@ type Project = {
   category: string;
   github?: string;
   demo?: string;
+  date?: string;
+  status?: string;
 };
 
 const projectsData: Project[] = [
@@ -26,6 +28,8 @@ const projectsData: Project[] = [
     category: "Web Development",
     github: "https://github.com/Arsan-sk/My_Portfolio",
     demo: "https://your-portfolio.com",
+    date: "Oct 2023",
+    status: "Completed"
   },
   {
     id: 2,
@@ -36,6 +40,8 @@ const projectsData: Project[] = [
     category: "Web Development",
     github: "https://github.com/Arsan-sk/FocusTube",
     demo: "https://focusxtube.vercel.app",
+    date: "Sep 2023",
+    status: "In Progress"
   },
   {
     id: 3,
@@ -46,16 +52,20 @@ const projectsData: Project[] = [
     category: "Mobile App",
     github: "https://github.com/Arsan-sk",
     demo: "https://demo.com",
+    date: "Aug 2023",
+    status: "Completed"
   },
   {
     id: 4,
-    title: "QuizKTC Comprehensive Quiz App",
+    title: "QuizKTC App",
     description: "A comprehensive quiz app that covers a wide range of topics, including history, science, math, and more.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
     tags: ["Node.js", "Postgress", "Tailwind CSS", "TypeScript"],
     category: "AI",
     github: "https://github.com/Arsan-sk/QuizKnightChallenge",
     demo: "https://demo.com",
+    date: "July 2023",
+    status: "Runner Up"
   },
   {
     id: 5,
@@ -66,6 +76,8 @@ const projectsData: Project[] = [
     category: "Web Development",
     github: "https://github.com/Arsan-sk",
     demo: "https://demo.com",
+    date: "June 2023",
+    status: "Completed"
   },
   {
     id: 6,
@@ -76,16 +88,20 @@ const projectsData: Project[] = [
     category: "Blockchain",
     github: "https://github.com/Arsan-sk/crypto-wallet",
     demo: "https://crypto-wallet-demo.netlify.app",
+    date: "May 2023",
+    status: "Beta"
   },
   {
     id: 7,
-    title: "Data Visualization Dashboard",
+    title: "Data Visualization",
     description: "Interactive dashboard for visualizing complex datasets with customizable charts, filters, and real-time updates.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     tags: ["D3.js", "React", "GraphQL", "Material UI"],
     category: "Data Science",
     github: "https://github.com/Arsan-sk/data-viz",
     demo: "https://data-dashboard-demo.vercel.app",
+    date: "Apr 2023",
+    status: "Completed"
   },
   {
     id: 8,
@@ -96,154 +112,58 @@ const projectsData: Project[] = [
     category: "IoT",
     github: "https://github.com/Arsan-sk/smart-home",
     demo: "https://smart-home-demo.netlify.app",
+    date: "Mar 2023",
+    status: "Prototype"
   },
   {
     id: 9,
-    title: "Augmented Reality Game",
+    title: "AR Game",
     description: "Mobile AR game that transforms your surroundings into an interactive playground with gesture controls.",
     image: "https://images.unsplash.com/photo-1626379953822-baec19c3accd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     tags: ["Unity", "ARKit", "ARCore", "C#"],
     category: "AR/VR",
     github: "https://github.com/Arsan-sk/ar-playground",
     demo: "https://ar-game-demo.io",
+    date: "Feb 2023",
+    status: "Completed"
   },
   {
     id: 10,
-    title: "Machine Learning Model API",
+    title: "ML Model API",
     description: "API service exposing machine learning models for image recognition, natural language processing, and recommendation systems.",
     image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     tags: ["Python", "TensorFlow", "Flask", "Docker"],
     category: "Machine Learning",
     github: "https://github.com/Arsan-sk/ml-api-service",
     demo: "https://ml-models-api.herokuapp.com",
+    date: "Jan 2023",
+    status: "Live"
   },
+  {
+    id: 11,
+    title: "Learning Management System - For Club",
+    description: "A Learning Management System for clubs that helps them manage their education flow between members and Lead Teachers",
+    image: "../public/projects/LMS.png",
+    tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+    category: "Web Development",
+    github: "https://github.com/Arsan-sk/LMS",
+    demo: "https://elite-lms-xi.vercel.app/",
+    date: "Dec 2023",
+    status: "Live"
+  }
 ];
 
 const Projects = () => {
   const { theme } = useTheme();
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [displayMode, setDisplayMode] = useState<'featured' | 'all'>('featured');
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const categories = ["All", ...Array.from(new Set(projectsData.map(project => project.category)))];
-  
-  const filteredProjects = activeCategory === "All" 
-    ? projectsData 
+
+  const filteredProjects = activeCategory === "All"
+    ? projectsData
     : projectsData.filter(project => project.category === activeCategory);
-
-  // Handle category change
-  const handleCategoryChange = (category: string) => {
-    setActiveCategory(category);
-    
-    // Reset scroll position when category changes
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTo({
-        left: 0,
-        behavior: 'smooth'
-      });
-      setScrollPosition(0);
-      setShowLeftArrow(false);
-      
-      // Check if we need to show right arrow
-      setTimeout(() => {
-        if (scrollContainerRef.current) {
-          setShowRightArrow(
-            scrollContainerRef.current.scrollWidth > scrollContainerRef.current.clientWidth
-          );
-        }
-      }, 100);
-    }
-  };
-
-  // Handle display mode change
-  const handleDisplayModeChange = (mode: 'featured' | 'all') => {
-    setDisplayMode(mode);
-    // Reset category when switching display modes
-    if (mode === 'all') {
-      setActiveCategory("All");
-      
-      // Reset arrows after DOM updates
-      setTimeout(() => {
-        if (scrollContainerRef.current) {
-          setShowLeftArrow(false);
-          setShowRightArrow(
-            scrollContainerRef.current.scrollWidth > scrollContainerRef.current.clientWidth
-          );
-        }
-      }, 100);
-    }
-  };
-
-  // Handle scroll for parallax effects
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      setScrollPosition(scrollContainerRef.current.scrollLeft);
-      
-      // Update arrow visibility
-      setShowLeftArrow(scrollContainerRef.current.scrollLeft > 0);
-      setShowRightArrow(
-        scrollContainerRef.current.scrollLeft < 
-        scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth - 10
-      );
-    }
-  };
-
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleScroll);
-      
-      // Check initial arrow visibility
-      setShowRightArrow(
-        scrollContainer.scrollWidth > scrollContainer.clientWidth
-      );
-    }
-    
-    return () => {
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, [activeCategory]);
-
-  // Reset scroll position when category changes - this is now handled by handleCategoryChange
-  // but we'll keep a simplified version here for safety
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      setScrollPosition(0);
-      setShowLeftArrow(false);
-    }
-  }, [activeCategory]);
-
-  const scrollTo = (direction: 'left' | 'right') => {
-    if (!scrollContainerRef.current) return;
-    
-    const container = scrollContainerRef.current;
-    const scrollAmount = container.clientWidth * 0.8;
-    
-    const targetPosition = direction === 'left' 
-      ? container.scrollLeft - scrollAmount 
-      : container.scrollLeft + scrollAmount;
-    
-    container.scrollTo({
-      left: targetPosition,
-      behavior: 'smooth'
-    });
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -257,12 +177,12 @@ const Projects = () => {
   };
 
   return (
-    <section 
-      id="projects" 
-      className={`py-24 overflow-hidden section-transition ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}
+    <section
+      id="projects"
+      className={`py-12 md:py-24 overflow-hidden section-transition ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className={`text-3xl md:text-4xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
             My <span className="text-purple-500">Projects</span>
           </h2>
@@ -270,47 +190,44 @@ const Projects = () => {
           <p className={`mt-6 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
             Here are some of my recent projects. Each project is a unique piece of development that showcases my skills and passion for creating exceptional digital experiences.
           </p>
-          
+
           {/* Display Mode Toggle */}
           <div className="flex justify-center mt-8 mb-6">
             <div className={`inline-flex rounded-lg p-1 ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-200'}`}>
               <button
-                onClick={() => handleDisplayModeChange('featured')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  displayMode === 'featured' 
-                    ? 'bg-purple-500 text-white shadow' 
-                    : theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                }`}
+                onClick={() => setDisplayMode('featured')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${displayMode === 'featured'
+                  ? 'bg-purple-500 text-white shadow'
+                  : theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                  }`}
               >
                 Featured
               </button>
               <button
-                onClick={() => handleDisplayModeChange('all')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  displayMode === 'all' 
-                    ? 'bg-purple-500 text-white shadow' 
-                    : theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                }`}
+                onClick={() => setDisplayMode('all')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${displayMode === 'all'
+                  ? 'bg-purple-500 text-white shadow'
+                  : theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                  }`}
               >
                 All Projects
               </button>
             </div>
           </div>
-          
+
           {/* Only show category filters in "all" mode */}
           {displayMode === 'all' && (
-            <div className="flex flex-wrap gap-2 justify-center mt-8">
+            <div className="flex overflow-x-auto pb-4 gap-2 justify-start md:justify-center mt-8 hide-scrollbar px-2">
               {categories.map(category => (
                 <button
                   key={category}
-                  onClick={() => handleCategoryChange(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center ${
-                    activeCategory === category 
-                      ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/20' 
-                      : theme === 'dark'
-                        ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                        : 'bg-white text-gray-700 hover:bg-gray-200 border border-gray-200'
-                  }`}
+                  onClick={() => setActiveCategory(category)}
+                  className={`min-h-[44px] px-5 py-3 rounded-full text-sm font-medium transition-all flex items-center whitespace-nowrap ${activeCategory === category
+                    ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/20'
+                    : theme === 'dark'
+                      ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                      : 'bg-white text-gray-700 hover:bg-gray-200 border border-gray-200'
+                    }`}
                 >
                   {activeCategory === category && <Filter className="mr-1 h-3 w-3" />}
                   {category}
@@ -338,111 +255,106 @@ const Projects = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 px-2 sm:px-0"
             >
               {filteredProjects.map((project, index) => (
-                <motion.div 
+                <motion.div
                   key={project.id}
-                  className={`rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl group ${
-                    theme === 'dark'
-                      ? 'bg-gray-900 hover:shadow-purple-500/20 border border-gray-700'
-                      : 'bg-white hover:shadow-purple-500/20 border border-gray-200'
-                  }`}
-                  onMouseEnter={() => setActiveProject(project)}
-                  onMouseLeave={() => setActiveProject(null)}
+                  className={`relative rounded-xl overflow-hidden transition-all duration-300 group h-[400px] ${theme === 'dark'
+                    ? 'bg-gray-900 border border-gray-700'
+                    : 'bg-white border border-gray-200'
+                    }`}
+                  onMouseEnter={() => setHoveredProject(project.id)}
+                  onMouseLeave={() => setHoveredProject(null)}
                   variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
                 >
-                  <div className="h-56 overflow-hidden relative">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  {/* Background Image */}
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:blur-sm"
                       onError={(e) => {
-                        console.log(`Project image failed to load: ${project.image}`);
                         const target = e.target as HTMLImageElement;
-                        // Create a colored SVG placeholder based on project id
                         const colors = ['6366f1', '8b5cf6', 'ec4899', '06b6d4', '10b981'];
                         const color = colors[project.id % colors.length];
                         target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23${color}"/><text x="50%" y="50%" font-family="Arial" font-size="48" fill="%23FFF" text-anchor="middle" dominant-baseline="middle">${project.title}</text></svg>`;
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                    
-                    {/* Category tag */}
-                    <div className="absolute top-4 right-4 bg-purple-500 text-white text-xs px-3 py-1 rounded-full">
-                      {project.category}
-                    </div>
+                    <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-black/60' : 'bg-black/40'} transition-opacity duration-300 group-hover:opacity-90`}></div>
                   </div>
-                  
-                  <div className={`p-6 relative z-10 ${
-                    theme === 'dark'
-                      ? 'bg-gradient-to-b from-gray-900 to-gray-800'
-                      : 'bg-gradient-to-b from-white to-gray-50'
-                  }`}>
-                    <h3 className={`text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors ${
-                      theme === 'dark' ? 'text-white' : 'text-gray-800'
-                    }`}>
-                      {project.title}
-                    </h3>
-                    <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span 
-                          key={tagIndex}
-                          className={`text-xs px-3 py-1 rounded-full border ${
-                            theme === 'dark'
-                              ? 'bg-gray-800 text-gray-300 border-gray-700'
-                              : 'bg-gray-100 text-gray-700 border-gray-200'
-                          }`}
-                        >
-                          {tag}
+
+                  {/* Content Container */}
+                  <div className="relative z-10 h-full flex flex-col p-6 text-white">
+                    {/* Top Section: Category & Status */}
+                    <div className="flex justify-between items-start mb-auto">
+                      <span className="px-3 py-1 rounded-full bg-purple-500/80 backdrop-blur-sm text-xs font-medium">
+                        {project.category}
+                      </span>
+                      {project.status && (
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${project.status === 'Completed' ? 'bg-green-500/80' :
+                            project.status === 'In Progress' ? 'bg-yellow-500/80' :
+                              'bg-blue-500/80'
+                          }`}>
+                          {project.status}
                         </span>
-                      ))}
+                      )}
                     </div>
-                    
-                    <div className={`flex justify-between items-center pt-4 border-t ${
-                      theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
-                    }`}>
-                      <div className="flex space-x-2">
-                        {project.github && (
-                          <a 
-                            href={project.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={`p-2 transition-colors ${
-                              theme === 'dark' ? 'text-gray-400 hover:text-purple-400' : 'text-gray-600 hover:text-purple-600'
-                            }`}
-                            aria-label="GitHub repository"
-                          >
-                            <Github size={20} />
-                          </a>
-                        )}
-                        {project.demo && (
-                          <a 
-                            href={project.demo} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className={`p-2 transition-colors ${
-                              theme === 'dark' ? 'text-gray-400 hover:text-purple-400' : 'text-gray-600 hover:text-purple-600'
-                            }`}
-                            aria-label="Live demo"
-                          >
-                            <ExternalLink size={20} />
-                          </a>
+
+                    {/* Bottom Section: Title, Date, Description */}
+                    <div className="mt-auto transform transition-transform duration-300 group-hover:-translate-y-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-2xl font-bold">{project.title}</h3>
+                        {project.date && (
+                          <span className="text-sm text-gray-300">{project.date}</span>
                         )}
                       </div>
-                      
-                      <a 
-                        href={project.demo || project.github || '#'} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-sm text-purple-400 hover:text-purple-300 transition-colors group-hover:underline"
-                      >
-                        View Details
-                      </a>
+
+                      {/* Short Description (Always Visible) */}
+                      <p className="text-gray-300 line-clamp-2 mb-4 group-hover:hidden">
+                        {project.description}
+                      </p>
+
+                      {/* Expanded Content (Visible on Hover) */}
+                      <div className="hidden group-hover:block animate-fadeIn">
+                        <p className="text-gray-200 mb-4 text-sm">
+                          {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {project.tags.map((tag, i) => (
+                            <span key={i} className="text-xs px-2 py-1 rounded bg-white/10 border border-white/20">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex gap-3">
+                          {project.demo && (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg transition-colors text-sm font-medium"
+                            >
+                              <ExternalLink size={16} /> Live Demo
+                            </a>
+                          )}
+                          {project.github && (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-2 rounded-lg transition-colors text-sm font-medium backdrop-blur-sm"
+                            >
+                              <Github size={16} /> Code
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -452,9 +364,9 @@ const Projects = () => {
         </AnimatePresence>
 
         <div className="mt-16 text-center">
-          <a 
-            href="https://github.com/Arsan-sk" 
-            target="_blank" 
+          <a
+            href="https://github.com/Arsan-sk"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group"
           >
