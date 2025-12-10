@@ -81,13 +81,13 @@ const projectsData: Project[] = [
   },
   {
     id: 6,
-    title: "Blockchain Wallet",
+    title: "Blockchain - Vote Rakshak",
     description: "A secure cryptocurrency wallet with multi-currency support, transaction history, and real-time market data.",
     image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
     tags: ["React Native", "Web3.js", "Ethereum", "Bitcoin"],
     category: "Blockchain",
-    github: "https://github.com/Arsan-sk/crypto-wallet",
-    demo: "https://crypto-wallet-demo.netlify.app",
+    github: "https://github.com/Arsan-sk/VoteRakshak",
+    demo: "https://vote-rakshak-sk.vercel.app/",
     date: "May 2023",
     status: "Beta"
   },
