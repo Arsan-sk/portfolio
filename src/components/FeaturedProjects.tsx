@@ -19,7 +19,7 @@ const featuredProjects: FeaturedProject[] = [
     id: 1,
     title: "Learning Management System - For Club",
     description: "A Learning Management System for clubs that helps them manage their education flow between members and Lead Teachers",
-    image: "public/projects/LMS.png",
+    image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
     tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/Arsan-sk/LMS",
     demo: "https://elite-lms-xi.vercel.app/",
