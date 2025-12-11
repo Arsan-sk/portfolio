@@ -143,7 +143,7 @@ const projectsData: Project[] = [
     id: 11,
     title: "Learning Management System - For Club",
     description: "A Learning Management System for clubs that helps them manage their education flow between members and Lead Teachers",
-    image: "../public/projects/LMS.png",
+    image: "../public/images/LMS.png",
     tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
     category: "Web Development",
     github: "https://github.com/Arsan-sk/LMS",
