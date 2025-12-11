@@ -141,6 +141,12 @@ const Hero = () => {
             <div className="w-full sm:w-auto flex justify-center">
               <ResumeButton />
             </div>
+            {/* Mobile arrow: placed in the column under buttons on small screens */}
+            <div className="sm:hidden flex justify-center">
+              <button onClick={scrollToAbout} className={`mt-2 p-2 rounded-full hover:bg-opacity-30 transition-all ${theme === 'dark' ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-purple-500/20 hover:bg-purple-500/40 text-purple-700'}`}>
+                <ArrowDown className={theme === 'dark' ? 'text-white' : 'text-purple-700'} />
+              </button>
+            </div>
           </div>
 
           <div className={`mt-16 hidden sm:flex items-center justify-center lg:justify-start animate-fadeInUp animation-delay-1200 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
@@ -182,12 +188,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce sm:hidden">
-        <button onClick={scrollToAbout} className={`p-2 rounded-full hover:bg-opacity-30 transition-all ${theme === 'dark' ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-purple-500/20 hover:bg-purple-500/40 text-purple-700'
-          }`}>
-          <ArrowDown className={theme === 'dark' ? 'text-white' : 'text-purple-700'} />
-        </button>
-      </div>
+      {/* absolute mobile arrow removed; arrow is now placed below ResumeButton inside the buttons column for mobile */}
     </section>
   );
 };

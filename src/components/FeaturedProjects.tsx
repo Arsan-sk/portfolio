@@ -136,7 +136,7 @@ const FeaturedProjects = () => {
               <p className={`mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                 {project.description}
               </p>
-              <div className={`flex ${index % 2 !== 0 ? 'justify-end' : ''}`}>
+              <div className={`flex ${index % 2 !== 0 ? 'md:justify-end' : ''}`}>
                 <a
                   href={project.demo || project.github || '#projects'}
                   target="_blank"

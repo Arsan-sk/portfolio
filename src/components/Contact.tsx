@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Mail, Phone, MapPin, Send, CheckCircle, X } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -12,6 +12,8 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showReceived, setShowReceived] = useState(false);
+  const [countdown, setCountdown] = useState(3);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,21 +26,61 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    // Use Vite env var if provided, otherwise fall back to the provided Formspree endpoint
+    const FORMSPREE_ENDPOINT = (import.meta as any).env.VITE_FORMSPREE_ENDPOINT || "https://formspree.io/f/xanrlogv";
+
+    try {
+      const form = new FormData();
+      form.append("name", formData.name);
+      form.append("email", formData.email);
+      form.append("subject", formData.subject);
+      form.append("message", formData.message);
+
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: form,
       });
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
+
+      if (res.ok) {
+        setFormData({ name: "", email: "", subject: "", message: "" });
+
+        // Show animated Received overlay with countdown then redirect to #home
+        setShowReceived(true);
+        setCountdown(3);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        const errMessage = data?.error || data?.message || "Failed to send message.";
+        toast({ title: "Error", description: errMessage });
+      }
+    } catch (err) {
+      toast({ title: "Error", description: "Network error. Please try again later." });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
+
+  // When showReceived becomes true start countdown
+  useEffect(() => {
+    if (!showReceived) return;
+    const interval = setInterval(() => {
+      setCountdown((c) => c - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [showReceived]);
+
+  // When countdown hits 0, redirect to #home and hide overlay
+  useEffect(() => {
+    if (!showReceived) return;
+    if (countdown <= 0) {
+      const home = document.getElementById("home");
+      if (home) home.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => setShowReceived(false), 500);
+    }
+  }, [countdown, showReceived]);
 
   const contactInfo = [
     {
@@ -64,6 +106,34 @@ const Contact = () => {
   return (
     <section id="contact" className={`py-24 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <div className="container mx-auto px-4">
+        {/* Animated Received overlay */}
+        {showReceived && (
+          <div
+            aria-live="polite"
+            className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 pointer-events-none"
+          >
+            <div className="max-w-md w-full pointer-events-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl p-6 transform transition duration-300 ease-out translate-y-4 opacity-100">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mr-4">
+                  <div className="h-12 w-12 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center">
+                    <CheckCircle className="text-green-600 dark:text-green-400" size={28} />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Message received</h4>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">Thanks — I'll review your message shortly. Redirecting to home in <span className="font-medium">{countdown}</span>s</p>
+                </div>
+                <button
+                  onClick={() => setShowReceived(false)}
+                  className="ml-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                  aria-label="Close"
+                >
+                  <X />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="text-center mb-16">
           <h2 className={`text-3xl md:text-4xl font-bold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
             Get In <span className="text-purple-500">Touch</span>
