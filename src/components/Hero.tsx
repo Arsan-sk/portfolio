@@ -107,6 +107,7 @@ const Hero = () => {
           <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp ${theme === 'dark' ? 'text-white' : 'text-gray-800'
             }`}>
             Hello, I'm <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent block sm:inline">Shaikh Mohd Arsan</span>
+            {/* <span className="block text-lg font-semibold text-gray-500 mt-2">Frontend & Web Developer — React, TypeScript, UI/UX</span> */}
           </h1>
 
           <h2 className={`text-2xl md:text-3xl mb-8 h-12 animate-fadeInUp animation-delay-300 ${theme === 'dark' ? 'text-white' : 'text-gray-800'
