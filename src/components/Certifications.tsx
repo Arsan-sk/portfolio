@@ -17,12 +17,12 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: 1,
-    title: "Web Development Certification",
-    issuer: "Udemy",
-    date: "2023",
-    category: "Web Development",
-    image: "https://placehold.co/400x300/2563eb/ffffff?text=Web+Dev",
-    url: "#"
+    title: "Oracle Cloud Infrastructure AI Foundations",
+    issuer: "Oracle",
+    date: "2025",
+    category: "Ai & Cloud",
+    image: "../public/images/certificates/OCI_AI_Foundations.png",
+    url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=944DCCD86E4C7BCB8CDAA85BD77D6765E173242F50DA4CDC5BDB65B108C03934"
   },
   {
     id: 2,
