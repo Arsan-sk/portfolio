@@ -21,7 +21,7 @@ const certificates: Certificate[] = [
     issuer: "Oracle",
     date: "2025",
     category: "Ai & Cloud",
-    image: "../public/images/certificates/OCI_AI_Foundations.png",
+    image: "../public/images/certificates/OCI_AI_Foundations.jpeg",
     url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=944DCCD86E4C7BCB8CDAA85BD77D6765E173242F50DA4CDC5BDB65B108C03934"
   },
   {
