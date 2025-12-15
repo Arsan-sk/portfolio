@@ -26,8 +26,8 @@ const projectsData: Project[] = [
     image: "/images/project1.jpg",
     tags: ["React", "Tailwind CSS", "TypeScript"],
     category: "Web Development",
-    github: "https://github.com/Arsan-sk/My_Portfolio",
-    demo: "https://your-portfolio.com",
+    github: "https://github.com/Arsan-sk/",
+    demo: "https://arsansk.vercel.app",
     date: "Oct 2023",
     status: "Completed"
   },
@@ -43,18 +43,18 @@ const projectsData: Project[] = [
     date: "Sep 2023",
     status: "In Progress"
   },
-  {
-    id: 3,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team features.",
-    image: "https://images.unsplash.com/photo-1611224885990-ab7363d7f2ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1039&q=80",
-    tags: ["React", "Firebase", "Redux", "Material UI"],
-    category: "Mobile App",
-    github: "https://github.com/Arsan-sk",
-    demo: "https://demo.com",
-    date: "Aug 2023",
-    status: "Completed"
-  },
+  // {
+  //   id: 3,
+  //   title: "Task Management App",
+  //   description: "A collaborative task management application with real-time updates and team features.",
+  //   image: "https://images.unsplash.com/photo-1611224885990-ab7363d7f2ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1039&q=80",
+  //   tags: ["React", "Firebase", "Redux", "Material UI"],
+  //   category: "Mobile App",
+  //   github: "https://github.com/Arsan-sk",
+  //   demo: "https://demo.com",
+  //   date: "Aug 2023",
+  //   status: "Completed"
+  // },
   {
     id: 4,
     title: "QuizKTC App",
@@ -67,18 +67,18 @@ const projectsData: Project[] = [
     date: "July 2023",
     status: "Runner Up"
   },
-  {
-    id: 5,
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce solution with product management, cart functionality, and secure checkout.",
-    image: "https://images.unsplash.com/photo-1629397886781-50dff21a14ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80",
-    tags: ["React", "Redux", "Node.js", "MongoDB", "Stripe"],
-    category: "Web Development",
-    github: "https://github.com/Arsan-sk",
-    demo: "https://demo.com",
-    date: "June 2023",
-    status: "Completed"
-  },
+  // {
+  //   id: 5,
+  //   title: "E-commerce Platform",
+  //   description: "A full-featured e-commerce solution with product management, cart functionality, and secure checkout.",
+  //   image: "https://images.unsplash.com/photo-1629397886781-50dff21a14ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80",
+  //   tags: ["React", "Redux", "Node.js", "MongoDB", "Stripe"],
+  //   category: "Web Development",
+  //   github: "https://github.com/Arsan-sk",
+  //   demo: "https://demo.com",
+  //   date: "June 2023",
+  //   status: "Completed"
+  // },
   {
     id: 6,
     title: "Blockchain - Vote Rakshak",
@@ -91,54 +91,54 @@ const projectsData: Project[] = [
     date: "May 2023",
     status: "Beta"
   },
-  {
-    id: 7,
-    title: "Data Visualization",
-    description: "Interactive dashboard for visualizing complex datasets with customizable charts, filters, and real-time updates.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["D3.js", "React", "GraphQL", "Material UI"],
-    category: "Data Science",
-    github: "https://github.com/Arsan-sk/data-viz",
-    demo: "https://data-dashboard-demo.vercel.app",
-    date: "Apr 2023",
-    status: "Completed"
-  },
-  {
-    id: 8,
-    title: "IoT Home Automation",
-    description: "Smart home control system connecting various IoT devices with mobile app interface and automated routines.",
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["React Native", "MQTT", "Raspberry Pi", "Node.js"],
-    category: "IoT",
-    github: "https://github.com/Arsan-sk/smart-home",
-    demo: "https://smart-home-demo.netlify.app",
-    date: "Mar 2023",
-    status: "Prototype"
-  },
-  {
-    id: 9,
-    title: "AR Game",
-    description: "Mobile AR game that transforms your surroundings into an interactive playground with gesture controls.",
-    image: "https://images.unsplash.com/photo-1626379953822-baec19c3accd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["Unity", "ARKit", "ARCore", "C#"],
-    category: "AR/VR",
-    github: "https://github.com/Arsan-sk/ar-playground",
-    demo: "https://ar-game-demo.io",
-    date: "Feb 2023",
-    status: "Completed"
-  },
-  {
-    id: 10,
-    title: "ML Model API",
-    description: "API service exposing machine learning models for image recognition, natural language processing, and recommendation systems.",
-    image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    tags: ["Python", "TensorFlow", "Flask", "Docker"],
-    category: "Machine Learning",
-    github: "https://github.com/Arsan-sk/ml-api-service",
-    demo: "https://ml-models-api.herokuapp.com",
-    date: "Jan 2023",
-    status: "Live"
-  },
+  // {
+  //   id: 7,
+  //   title: "Data Visualization",
+  //   description: "Interactive dashboard for visualizing complex datasets with customizable charts, filters, and real-time updates.",
+  //   image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+  //   tags: ["D3.js", "React", "GraphQL", "Material UI"],
+  //   category: "Data Science",
+  //   github: "https://github.com/Arsan-sk/data-viz",
+  //   demo: "https://data-dashboard-demo.vercel.app",
+  //   date: "Apr 2023",
+  //   status: "Completed"
+  // },
+  // {
+  //   id: 8,
+  //   title: "IoT Home Automation",
+  //   description: "Smart home control system connecting various IoT devices with mobile app interface and automated routines.",
+  //   image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+  //   tags: ["React Native", "MQTT", "Raspberry Pi", "Node.js"],
+  //   category: "IoT",
+  //   github: "https://github.com/Arsan-sk/smart-home",
+  //   demo: "https://smart-home-demo.netlify.app",
+  //   date: "Mar 2023",
+  //   status: "Prototype"
+  // },
+  // {
+  //   id: 9,
+  //   title: "AR Game",
+  //   description: "Mobile AR game that transforms your surroundings into an interactive playground with gesture controls.",
+  //   image: "https://images.unsplash.com/photo-1626379953822-baec19c3accd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+  //   tags: ["Unity", "ARKit", "ARCore", "C#"],
+  //   category: "AR/VR",
+  //   github: "https://github.com/Arsan-sk/ar-playground",
+  //   demo: "https://ar-game-demo.io",
+  //   date: "Feb 2023",
+  //   status: "Completed"
+  // },
+  // {
+  //   id: 10,
+  //   title: "ML Model API",
+  //   description: "API service exposing machine learning models for image recognition, natural language processing, and recommendation systems.",
+  //   image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+  //   tags: ["Python", "TensorFlow", "Flask", "Docker"],
+  //   category: "Machine Learning",
+  //   github: "https://github.com/Arsan-sk/ml-api-service",
+  //   demo: "https://ml-models-api.herokuapp.com",
+  //   date: "Jan 2023",
+  //   status: "Live"
+  // },
   {
     id: 11,
     title: "Learning Management System - For Club",
