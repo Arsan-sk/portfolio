@@ -28,7 +28,7 @@ const projectsData: Project[] = [
     category: "Web Development",
     github: "https://github.com/Arsan-sk/",
     demo: "https://arsansk.vercel.app",
-    date: "Oct 2023",
+    date: "Oct 2024",
     status: "Completed"
   },
   {
@@ -40,7 +40,7 @@ const projectsData: Project[] = [
     category: "Web Development",
     github: "https://github.com/Arsan-sk/FocusTube",
     demo: "https://focusxtube.vercel.app",
-    date: "Sep 2023",
+    date: "Sep 2025",
     status: "In Progress"
   },
   // {
@@ -60,7 +60,7 @@ const projectsData: Project[] = [
     title: "QuizKTC App",
     description: "A comprehensive quiz app that covers a wide range of topics, including history, science, math, and more.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
-    tags: ["Node.js", "Postgress", "Tailwind CSS", "TypeScript"],
+    tags: ["Node.js", "Postgres", "Tailwind CSS", "TypeScript"],
     category: "AI",
     github: "https://github.com/Arsan-sk/QuizKnightChallenge",
     demo: "https://demo.com",
@@ -88,7 +88,7 @@ const projectsData: Project[] = [
     category: "Blockchain",
     github: "https://github.com/Arsan-sk/VoteRakshak",
     demo: "https://vote-rakshak-sk.vercel.app/",
-    date: "May 2023",
+    date: "Nov 2025",
     status: "Beta"
   },
   // {
@@ -148,7 +148,19 @@ const projectsData: Project[] = [
     category: "Web Development",
     github: "https://github.com/Arsan-sk/LMS",
     demo: "https://elite-lms-xi.vercel.app/",
-    date: "Dec 2023",
+    date: "Oct 2025",
+    status: "Live"
+  },
+  {
+    id: 12,
+    title: "ShareBite",
+    description: "A food donation platform connecting surplus food providers with those in need, reducing waste and combating hunger through community collaboration.",
+    image: "/images/projects/sharebite.png",
+    tags: ["Node.js", "Postgres", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/Arsan-sk/ShareBite",
+    demo: "https://share-bite-liard.vercel.app/",
+    category: "Web Development",
+    date: "Dec 2025",
     status: "Live"
   }
 ];

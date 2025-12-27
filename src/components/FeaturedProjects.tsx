@@ -27,12 +27,12 @@ const featuredProjects: FeaturedProject[] = [
   },
   {
     id: 2,
-    title: "Blockchain - Vote Rakshak",
-    description: "A comprehensive quiz app that covers a wide range of topics, including history, science, math, and more.",
-    image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
-    tags: ["Node.js", "Postgress", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/Arsan-sk/VoteRakshak",
-    demo: "https://vote-rakshak-sk.vercel.app/",
+    title: "ShareBite",
+    description: "A food donation platform connecting surplus food providers with those in need, reducing waste and combating hunger through community collaboration.",
+    image: "/images/projects/sharebite.png",
+    tags: ["Node.js", "Postgres", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/Arsan-sk/ShareBite",
+    demo: "https://share-bite-liard.vercel.app/",
     featured: true
   },
   {
