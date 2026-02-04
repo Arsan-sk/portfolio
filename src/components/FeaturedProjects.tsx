@@ -2,50 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
+import { getFeaturedProjects, Project } from "@/data/portfolio";
 
-interface FeaturedProject {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  github?: string;
-  demo?: string;
-  featured: boolean;
-}
-
-const featuredProjects: FeaturedProject[] = [
-  {
-    id: 1,
-    title: "Learning Management System - For Club",
-    description: "A Learning Management System for clubs that helps them manage their education flow between members and Lead Teachers",
-    image: "/images/LMS.png",
-    tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/Arsan-sk/LMS",
-    demo: "https://elite-lms-xi.vercel.app/",
-    featured: true
-  },
-  {
-    id: 2,
-    title: "ShareBite",
-    description: "A food donation platform connecting surplus food providers with those in need, reducing waste and combating hunger through community collaboration.",
-    image: "/images/projects/sharebite.png",
-    tags: ["Node.js", "Postgres", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/Arsan-sk/ShareBite",
-    demo: "https://share-bite-liard.vercel.app/",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Waste Segregation and Analytics System",
-    description: "A web application that helps users segregate and manage waste effectively, promoting recycling and environmental sustainability.",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/Arsan-sk/SegSenseAI",
-    demo: "https://seg-sense.vercel.app/",
-    featured: true
-  }  
-];
+// Get featured projects from centralized data source
+const featuredProjects = getFeaturedProjects();
 
 const FeaturedProjects = () => {
   const { theme } = useTheme();
