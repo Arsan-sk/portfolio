@@ -174,6 +174,18 @@ export const projectsData: Project[] = [
     category: "AI/ML",
     date: "Oct 2025",
     status: "Live"
+  },
+  {
+    id: 13,
+    title: "Portfolio Website for Hostel",
+    description: "A modern and elegant portfolio website for a hostel, showcasing its features, services, and gallery to attract potential guests.",
+    image: "/images/projects/hostel.png",
+    tags: ["React", "Nodejs", "Tailwind CSS"],
+    github: "https://github.com/Arsan-sk/zam-zam-hostel",
+    demo: "https://zam-zam-hostel.vercel.app/",
+    category: "Web Development",
+    date: "April 2026",
+    status: "Live"
   }
 ];
 
