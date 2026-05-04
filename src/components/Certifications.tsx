@@ -26,12 +26,12 @@ const certificates: Certificate[] = [
   },
   {
     id: 2,
-    title: "React Advanced Course",
-    issuer: "Coursera",
-    date: "2022",
-    category: "Frontend",
-    image: "https://placehold.co/400x300/8b5cf6/ffffff?text=React",
-    url: "#"
+    title: "Artificaial Intelligence & ML",
+    issuer: "Samsung Innovation Campus",
+    date: "2026",
+    category: "AIML & NN",
+    image: "/images/certificates/AIML.jpeg",
+    url: "https://printing.aaskill.com/tssc/verify.aspx?id=C09EAE2A-289"
   },
   {
     id: 3,
