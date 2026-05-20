@@ -1,23 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://arsansk.vercel.app/</loc>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://arsansk.vercel.app/images/my_photo.jpg</image:loc>
+      <image:title>Shaikh Mohd Arsan — Frontend Developer</image:title>
+      <image:caption>Shaikh Mohd Arsan, also known as Arsan, ArsanSK, Arsan Shaikh — Frontend Developer and UI/UX Designer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://arsansk.vercel.app/images/AS.jpg</image:loc>
+      <image:title>Arsan Shaikh Profile Photo</image:title>
+      <image:caption>Profile photo of Shaikh Mohd Arsan (ArsanSK), web developer and React specialist</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://arsansk.vercel.app/#about</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://arsansk.vercel.app/#experience</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arsansk.vercel.app/#certifications</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://arsansk.vercel.app/#projects</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://arsansk.vercel.app/#blog</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://arsansk.vercel.app/#contact</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arsansk.vercel.app/updating-soon</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

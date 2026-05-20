@@ -6,10 +6,10 @@ const Footer = () => {
   const year = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: <Github size={20} />, url: "https://github.com/Arsan-sk" },
-    { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/" },
-    { icon: <Twitter size={20} />, url: "https://x.com/Shaikh_Arsan09" },
-    { icon: <Instagram size={20} />, url: "https://instagram.com/@arsan_sk_09" },
+    { icon: <Github size={20} />, url: "https://github.com/Arsan-sk", label: "Shaikh Mohd Arsan on GitHub" },
+    { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/arsan-shaikh", label: "Arsan Shaikh on LinkedIn" },
+    { icon: <Twitter size={20} />, url: "https://x.com/Shaikh_Arsan09", label: "Shaikh Arsan on Twitter/X" },
+    { icon: <Instagram size={20} />, url: "https://instagram.com/@arsan_sk_09", label: "ArsanSK on Instagram" },
   ];
 
   const scrollToTop = () => {
@@ -37,7 +37,8 @@ const Footer = () => {
                 key={index}
                 href={link.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
+                aria-label={link.label}
                 className={`p-2 rounded-full transition-colors duration-300 ${
                   theme === 'dark'
                     ? 'bg-gray-800 text-gray-400 hover:text-white hover:bg-purple-500'

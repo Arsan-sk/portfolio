@@ -172,7 +172,7 @@ const Hero = () => {
 
             <img
               src="/images/AS.jpg"
-              alt="Shaikh Mohd Arsan"
+              alt="Shaikh Mohd Arsan — Frontend Developer, Web Developer, and UI/UX Designer"
               className="absolute inset-3 w-[calc(100%-24px)] h-[calc(100%-24px)] rounded-full object-cover border-2 border-white/20 shadow-2xl z-10"
               onError={(e) => {
                 console.log("Profile image failed to load, using fallback");

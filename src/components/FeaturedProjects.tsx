@@ -39,7 +39,8 @@ const FeaturedProjects = () => {
               <div className="absolute inset-0 bg-purple-500 mix-blend-multiply opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
               <img
                 src={project.image}
-                alt={project.title}
+                alt={`${project.title} — Featured project by Shaikh Mohd Arsan`}
+                loading="lazy"
                 className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

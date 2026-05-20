@@ -1,8 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+# Robots.txt for arsansk.vercel.app — Shaikh Mohd Arsan Portfolio
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,7 +15,22 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
 
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemaps
 Sitemap: https://arsansk.vercel.app/sitemap.xml
+
+# Host
+Host: https://arsansk.vercel.app

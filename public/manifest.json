@@ -1,0 +1,26 @@
+{
+  "name": "Shaikh Mohd Arsan — Portfolio",
+  "short_name": "ArsanSK",
+  "description": "Official portfolio of Shaikh Mohd Arsan (Arsan Shaikh, ArsanSK) — Frontend Developer, Web Developer, and UI/UX Designer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": ["portfolio", "developer", "web development"],
+  "icons": [
+    {
+      "src": "/images/my_photo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/AS.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

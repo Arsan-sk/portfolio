@@ -1,31 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shaikh Mohd Arsan — Frontend & Web Developer | Portfolio</title>
-    <meta name="description" content="Shaikh Mohd Arsan (Arsan SK) — Frontend developer, UI/UX designer, and web developer. Explore web projects, featured work, and professional services for building modern websites and web apps." />
-    <meta name="keywords" content="Shaikh Mohd Arsan, Arsan, ArsanSK, Arsan Shaikh, frontend developer, web developer, UI UX designer, portfolio, Arsan-sk, arsansk" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary Meta Tags -->
+    <title>Shaikh Mohd Arsan — Frontend & Web Developer | React, TypeScript, UI/UX Portfolio</title>
+    <meta name="description" content="Official portfolio of Shaikh Mohd Arsan (Arsan Shaikh, ArsanSK, Arsan-sk). Frontend developer, web developer, and UI/UX designer specializing in React, TypeScript, and modern web technologies. Explore projects, skills, experience, and hire Arsan for web development services." />
+    <meta name="keywords" content="Shaikh Mohd Arsan, shaikh mohd arsan, Arsan, arsan, ARSAN, ArsanSK, arsansk, ARSANSK, Arsan Shaikh, arsan shaikh, ARSAN SHAIKH, Shaikh Arsan, shaikh arsan, SHAIKH ARSAN, Arsan-sk, arsan-sk, ARSAN-SK, Arsan SK, arsan sk, Mohd Arsan, mohd arsan, Shaikh Mohd Arsan portfolio, Arsan developer, Arsan frontend developer, Arsan web developer, Arsan React developer, Arsan TypeScript developer, frontend developer portfolio, web developer India, UI UX designer, React developer, TypeScript developer, full stack developer, hire Arsan Shaikh, hire web developer, modern web portfolio, Arsan Shaikh projects, ArsanSK portfolio" />
     <meta name="author" content="Shaikh Mohd Arsan" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="theme-color" content="#7c3aed" />
 
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://arsansk.vercel.app/" />
-    <meta property="og:title" content="Shaikh Mohd Arsan — Frontend & Web Developer" />
-    <meta property="og:description" content="Frontend developer and UI/UX designer. Browse projects, contact for web development services, and learn about my skills in React, TypeScript and modern frontend tooling." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/my_photo.jpg" />
-    <meta property="og:image:alt" content="Shaikh Mohd Arsan — Developer" />
-    <meta property="og:url" content="https://arsansk.vercel.app/" />
 
+    <!-- Alternate language (self-referencing for single-language sites) -->
+    <link rel="alternate" hreflang="en" href="https://arsansk.vercel.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://arsansk.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Shaikh Mohd Arsan — Portfolio" />
+    <meta property="og:title" content="Shaikh Mohd Arsan — Frontend & Web Developer | Portfolio" />
+    <meta property="og:description" content="Official portfolio of Shaikh Mohd Arsan (Arsan Shaikh, ArsanSK). Frontend developer and UI/UX designer. Browse projects built with React, TypeScript, and modern frontend tooling. Contact for web development services." />
+    <meta property="og:url" content="https://arsansk.vercel.app/" />
+    <meta property="og:image" content="https://arsansk.vercel.app/images/my_photo.jpg" />
+    <meta property="og:image:alt" content="Shaikh Mohd Arsan — Frontend Developer and UI/UX Designer" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Arsan" />
+    <meta property="profile:last_name" content="Shaikh" />
+    <meta property="profile:username" content="arsansk" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@arsan_sk" />
+    <meta name="twitter:creator" content="@arsan_sk" />
     <meta name="twitter:title" content="Shaikh Mohd Arsan — Frontend & Web Developer" />
-    <meta name="twitter:description" content="Frontend developer and UI/UX designer. Browse my portfolio of web projects built with React, TypeScript, and Tailwind CSS." />
-    <meta name="twitter:image" content="/images/my_photo.jpg" />
-    
+    <meta name="twitter:description" content="Frontend developer, UI/UX designer, and React specialist. Explore the portfolio of Arsan Shaikh — projects, skills, and experience in modern web development." />
+    <meta name="twitter:image" content="https://arsansk.vercel.app/images/my_photo.jpg" />
+    <meta name="twitter:image:alt" content="Shaikh Mohd Arsan portfolio preview" />
+
     <!-- Preload important resources -->
     <link rel="preload" href="/images/my_photo.jpg" as="image" />
+    <link rel="preload" href="/images/AS.jpg" as="image" />
 
-    <!-- JSON-LD structured data for Person and Website -->
+    <!-- Favicons & Manifest -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/my_photo.jpg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdn.gpteng.co" />
+
+    <!-- JSON-LD Structured Data: Person + WebSite + ProfilePage + ItemList -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,17 +70,169 @@
           "@type": "Person",
           "@id": "https://arsansk.vercel.app/#person",
           "name": "Shaikh Mohd Arsan",
-          "alternateName": ["Arsan","ArsanSK","Arsan Shaikh","Arsan-sk","arsansk"],
+          "givenName": "Arsan",
+          "familyName": "Shaikh",
+          "additionalName": "Mohd",
+          "alternateName": [
+            "Arsan",
+            "arsan",
+            "ARSAN",
+            "ArsanSK",
+            "arsansk",
+            "ARSANSK",
+            "Arsan Shaikh",
+            "arsan shaikh",
+            "ARSAN SHAIKH",
+            "Shaikh Arsan",
+            "shaikh arsan",
+            "SHAIKH ARSAN",
+            "Arsan-sk",
+            "arsan-sk",
+            "ARSAN-SK",
+            "Arsan SK",
+            "arsan sk",
+            "Mohd Arsan",
+            "mohd arsan",
+            "Shaikh Mohd Arsan",
+            "shaikh mohd arsan",
+            "SHAIKH MOHD ARSAN"
+          ],
           "url": "https://arsansk.vercel.app/",
-          "sameAs": ["https://github.com/Arsan-sk","https://linkedin.com/in/arsan-shaikh"]
+          "image": "https://arsansk.vercel.app/images/my_photo.jpg",
+          "description": "Shaikh Mohd Arsan is a frontend developer, web developer, and UI/UX designer specializing in React, TypeScript, and modern web technologies.",
+          "jobTitle": "Frontend Developer & UI/UX Designer",
+          "knowsAbout": [
+            "Frontend Development",
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "UI/UX Design",
+            "Web Development",
+            "Node.js",
+            "Python",
+            "AI/ML",
+            "Tailwind CSS",
+            "Next.js"
+          ],
+          "sameAs": [
+            "https://github.com/Arsan-sk",
+            "https://linkedin.com/in/arsan-shaikh",
+            "https://x.com/Shaikh_Arsan09",
+            "https://instagram.com/@arsan_sk_09"
+          ]
         },
         {
           "@type": "WebSite",
           "@id": "https://arsansk.vercel.app/#website",
           "url": "https://arsansk.vercel.app/",
           "name": "Shaikh Mohd Arsan — Portfolio",
-          "description": "Portfolio of Shaikh Mohd Arsan — Frontend Developer and UI/UX Designer.",
-          "publisher": { "@id": "https://arsansk.vercel.app/#person" }
+          "description": "Official portfolio website of Shaikh Mohd Arsan — Frontend Developer, Web Developer, and UI/UX Designer.",
+          "publisher": { "@id": "https://arsansk.vercel.app/#person" },
+          "inLanguage": "en-US",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://arsansk.vercel.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://arsansk.vercel.app/#profilepage",
+          "url": "https://arsansk.vercel.app/",
+          "name": "Shaikh Mohd Arsan — Developer Portfolio",
+          "description": "Portfolio profile page of Shaikh Mohd Arsan (ArsanSK), showcasing web development projects, technical skills, and professional experience.",
+          "mainEntity": { "@id": "https://arsansk.vercel.app/#person" },
+          "isPartOf": { "@id": "https://arsansk.vercel.app/#website" },
+          "inLanguage": "en-US",
+          "dateCreated": "2024-10-01",
+          "dateModified": "2026-05-20"
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://arsansk.vercel.app/#projects",
+          "name": "Projects by Shaikh Mohd Arsan",
+          "description": "A collection of web development, AI/ML, and blockchain projects built by Arsan Shaikh.",
+          "numberOfItems": 13,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Learning Management System (LMS)",
+                "description": "A Learning Management System for clubs that helps manage education flow between members and lead teachers.",
+                "url": "https://elite-lms-xi.vercel.app/",
+                "author": { "@id": "https://arsansk.vercel.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "ShareBite",
+                "description": "A food donation platform connecting surplus food providers with those in need.",
+                "url": "https://share-bite-liard.vercel.app/",
+                "author": { "@id": "https://arsansk.vercel.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "FocusTube",
+                "description": "A YouTube feature to improve concentration on learning and avoid distractions.",
+                "url": "https://focusxtube.vercel.app",
+                "author": { "@id": "https://arsansk.vercel.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "WeddingHall Portfolio",
+                "description": "A modern and elegant portfolio website for a wedding hall venue.",
+                "url": "https://wedding-hall-venue.vercel.app/",
+                "author": { "@id": "https://arsansk.vercel.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Vote Rakshak (Blockchain)",
+                "description": "A secure blockchain-based voting platform.",
+                "url": "https://vote-rakshak-sk.vercel.app/",
+                "author": { "@id": "https://arsansk.vercel.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "SegSenseAI",
+                "description": "An AI-powered waste segregation and management web application.",
+                "url": "https://seg-sense.vercel.app/",
+                "author": { "@id": "https://arsansk.vercel.app/#person" }
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://arsansk.vercel.app/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://arsansk.vercel.app/"
+            }
+          ]
         }
       ]
     }
@@ -52,6 +240,14 @@
   </head>
 
   <body>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
+        <h1>Shaikh Mohd Arsan — Frontend & Web Developer Portfolio</h1>
+        <p>Shaikh Mohd Arsan (also known as Arsan, ArsanSK, Arsan Shaikh, Arsan-sk, Shaikh Arsan) is a frontend developer, web developer, and UI/UX designer based in India. Specializing in React, TypeScript, and modern web technologies.</p>
+        <p>Please enable JavaScript to view the full interactive portfolio.</p>
+        <p>Contact: <a href="https://github.com/Arsan-sk">GitHub</a> | <a href="https://linkedin.com/in/arsan-shaikh">LinkedIn</a></p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>

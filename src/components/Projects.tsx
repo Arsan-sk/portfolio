@@ -127,7 +127,8 @@ const Projects = () => {
                   <div className="absolute inset-0 z-0">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} — Project by Shaikh Mohd Arsan (ArsanSK)`}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:blur-sm"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
