@@ -39,7 +39,7 @@ const certificates: Certificate[] = [
     issuer: "Guvi - Powered By Google",
     date: "2024",
     category: "Programming",
-    image: "/images/certificates/Python.png",
+    image: "/images/certificates/python.png",
     url: "https://www.guvi.in/certificate?id=h0gjq98rJ5E4418f61"
   },
   {
