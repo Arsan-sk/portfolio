@@ -35,12 +35,12 @@ const certificates: Certificate[] = [
   },
   {
     id: 3,
-    title: "UI/UX Design Principles",
-    issuer: "Google",
-    date: "2022",
-    category: "Design",
-    image: "https://placehold.co/400x300/ec4899/ffffff?text=UI/UX",
-    url: "#"
+    title: "Python for Everybody",
+    issuer: "Guvi - Powered By Google",
+    date: "2024",
+    category: "Programming",
+    image: "/images/certificates/Python.png",
+    url: "https://www.guvi.in/certificate?id=h0gjq98rJ5E4418f61"
   },
   {
     id: 4,
