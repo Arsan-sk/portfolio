@@ -8,13 +8,13 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://arsansk.vercel.app/images/my_photo.jpg</image:loc>
-      <image:title>Shaikh Mohd Arsan — Frontend Developer</image:title>
-      <image:caption>Shaikh Mohd Arsan, also known as Arsan, ArsanSK, Arsan Shaikh — Frontend Developer and UI/UX Designer</image:caption>
+      <image:title>Shaikh Mohd Arsan — Full-Stack Engineer & AI Pipeline Builder</image:title>
+      <image:caption>Shaikh Mohd Arsan, also known as Arsan, ArsanSK, Arsan Shaikh — Full-Stack Engineer & AI Pipeline Builder</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://arsansk.vercel.app/images/AS.jpg</image:loc>
       <image:title>Arsan Shaikh Profile Photo</image:title>
-      <image:caption>Profile photo of Shaikh Mohd Arsan (ArsanSK), web developer and React specialist</image:caption>
+      <image:caption>Profile photo of Shaikh Mohd Arsan (ArsanSK), Full-Stack Engineer & AI Pipeline Builder</image:caption>
     </image:image>
   </url>
   <url>

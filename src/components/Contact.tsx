@@ -140,7 +140,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto"></div>
           <p className={`mt-6 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-            Have a project in mind or want to collaborate? Feel free to reach out to me through any of the channels below or by filling out the contact form.
+            Open to freelance projects, internships, and final-year collaborations — full-stack systems, AI automation, or anything that needs to be designed right from the ground up.
           </p>
         </div>
 

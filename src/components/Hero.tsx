@@ -117,7 +117,7 @@ const Hero = () => {
 
           <p className={`max-w-2xl mx-auto lg:mx-0 mb-10 text-lg animate-fadeInUp animation-delay-600 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
             }`}>
-            I create stunning digital experiences with clean code and user-centered design. Let's build something amazing together.
+            I design systems from first principles and build them end-to-end. Full-stack development · AI automation · Blockchain applications.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fadeInUp animation-delay-900 w-full sm:w-auto">
@@ -172,7 +172,7 @@ const Hero = () => {
 
             <img
               src="/images/AS.jpg"
-              alt="Shaikh Mohd Arsan — Frontend Developer, Web Developer, and UI/UX Designer"
+              alt="Shaikh Mohd Arsan — Full-Stack Engineer & AI Pipeline Builder"
               className="absolute inset-3 w-[calc(100%-24px)] h-[calc(100%-24px)] rounded-full object-cover border-2 border-white/20 shadow-2xl z-10"
               onError={(e) => {
                 console.log("Profile image failed to load, using fallback");

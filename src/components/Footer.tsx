@@ -7,7 +7,7 @@ const Footer = () => {
   
   const socialLinks = [
     { icon: <Github size={20} />, url: "https://github.com/Arsan-sk", label: "Shaikh Mohd Arsan on GitHub" },
-    { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/arsan-shaikh", label: "Arsan Shaikh on LinkedIn" },
+    { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/arsan-sk", label: "Shaikh Mohd Arsan on LinkedIn" },
     { icon: <Twitter size={20} />, url: "https://x.com/Shaikh_Arsan09", label: "Shaikh Arsan on Twitter/X" },
     { icon: <Instagram size={20} />, url: "https://instagram.com/@arsan_sk_09", label: "ArsanSK on Instagram" },
   ];

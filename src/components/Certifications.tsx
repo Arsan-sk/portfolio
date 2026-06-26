@@ -35,8 +35,8 @@ const certificates: Certificate[] = [
   },
   {
     id: 3,
-    title: "Python for Everybody",
-    issuer: "Guvi - Powered By Google",
+    title: "Python with IIT Certification",
+    issuer: "GUVI",
     date: "2024",
     category: "Programming",
     image: "/images/certificates/python.png",

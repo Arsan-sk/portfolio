@@ -31,19 +31,35 @@ const skills: Skill[] = [
   },
   {
     name: "React",
-    level: 70,
+    level: 80,
     category: "Frontend",
     icon: "⚛️",
     color: "from-cyan-500 to-blue-500",
     description: "Building dynamic UIs with React hooks, context API, and integrating with state management libraries."
   },
   {
+    name: "Next.js",
+    level: 85,
+    category: "Frontend",
+    icon: "⚡",
+    color: "from-slate-700 to-slate-900",
+    description: "Building production-grade React apps with server-side rendering and static generation."
+  },
+  {
     name: "TypeScript",
-    level: 55,
+    level: 85,
     category: "Languages",
     icon: "📘",
     color: "from-blue-500 to-indigo-500",
     description: "Using type definitions to create safer, more maintainable code with better developer experience."
+  },
+  {
+    name: "Tailwind CSS",
+    level: 90,
+    category: "Frontend",
+    icon: "🎨",
+    color: "from-teal-400 to-cyan-400",
+    description: "Designing utility-first responsive layouts with clean CSS styles."
   },
   {
     name: "UI/UX Design",
@@ -55,19 +71,19 @@ const skills: Skill[] = [
   },
   {
     name: "Node.js",
-    level: 75,
+    level: 85,
     category: "Backend",
     icon: "🖥️",
     color: "from-green-500 to-emerald-500",
     description: "Building server-side applications and APIs with Express and other Node.js frameworks."
   },
   {
-    name: "AI Tools & Prompting",
-    level: 95,
-    category: "AI",
-    icon: "🤖",
-    color: "from-violet-500 to-purple-500",
-    description: "Leveraging AI platforms for development, content creation, and problem-solving with effective prompt engineering."
+    name: "Express",
+    level: 85,
+    category: "Backend",
+    icon: "🚀",
+    color: "from-gray-500 to-gray-700",
+    description: "Creating lightweight, robust RESTful APIs and middleware configurations."
   },
   {
     name: "Python",
@@ -77,14 +93,182 @@ const skills: Skill[] = [
     color: "from-blue-400 to-green-400",
     description: "Data analysis, automation, and backend development with Python and its extensive library ecosystem."
   },
-  // {
-  //   name: "DevOps",
-  //   level: 60,
-  //   category: "Operations",
-  //   icon: "⚙️",
-  //   color: "from-gray-500 to-slate-500",
-  //   description: "Implementing CI/CD pipelines, containerization, and deployment automation for faster development cycles."
-  // },
+  {
+    name: "Supabase",
+    level: 90,
+    category: "Backend",
+    icon: "⚡",
+    color: "from-emerald-400 to-teal-500",
+    description: "Leveraging PostgreSQL databases, authentication, real-time subscriptions, and storage."
+  },
+  {
+    name: "PostgreSQL",
+    level: 85,
+    category: "Backend",
+    icon: "🐘",
+    color: "from-blue-600 to-sky-700",
+    description: "Writing complex relational queries, indexes, and database optimizations."
+  },
+  {
+    name: "Socket.io",
+    level: 80,
+    category: "Backend",
+    icon: "🔌",
+    color: "from-zinc-600 to-zinc-800",
+    description: "Enabling real-time, bi-directional, event-based communication between client and server."
+  },
+  {
+    name: "Solidity",
+    level: 80,
+    category: "Blockchain",
+    icon: "💎",
+    color: "from-indigo-500 to-purple-600",
+    description: "Writing secure smart contracts for decentralized apps on the Ethereum blockchain."
+  },
+  {
+    name: "Hardhat",
+    level: 80,
+    category: "Blockchain",
+    icon: "👷",
+    color: "from-amber-600 to-yellow-500",
+    description: "Testing, compiling, and deploying smart contracts in local Ethereum environments."
+  },
+  {
+    name: "ethers.js",
+    level: 80,
+    category: "Blockchain",
+    icon: "⛓️",
+    color: "from-blue-500 to-indigo-500",
+    description: "Interacting with the Ethereum blockchain and smart contracts from frontend clients."
+  },
+  {
+    name: "Prompt Engineering",
+    level: 95,
+    category: "AI",
+    icon: "🧠",
+    color: "from-violet-500 to-purple-500",
+    description: "Designing high-performance system instructions and context structures for LLMs."
+  },
+  {
+    name: "LLMs",
+    level: 90,
+    category: "AI",
+    icon: "🤖",
+    color: "from-indigo-400 to-purple-600",
+    description: "Integrating open-source and API-driven Large Language Models into automated systems."
+  },
+  {
+    name: "AI Agents",
+    level: 85,
+    category: "AI",
+    icon: "🤖",
+    color: "from-fuchsia-500 to-purple-700",
+    description: "Building multi-agent task loops, prompt reply networks, and event-driven automation."
+  },
+  {
+    name: "Computer Vision",
+    level: 85,
+    category: "AI",
+    icon: "👁️",
+    color: "from-emerald-500 to-teal-600",
+    description: "Processing visual data and extracting structural features from images and video feeds."
+  },
+  {
+    name: "OpenCV",
+    level: 85,
+    category: "AI",
+    icon: "📸",
+    color: "from-green-500 to-emerald-600",
+    description: "Building real-time image processing pipelines and computer vision algorithms."
+  },
+  {
+    name: "Image Generation",
+    level: 85,
+    category: "AI",
+    icon: "🖼️",
+    color: "from-pink-500 to-rose-500",
+    description: "Automating visual scene generation using open-source models and diffusion APIs."
+  },
+  {
+    name: "Text-to-Speech",
+    level: 85,
+    category: "AI",
+    icon: "🗣️",
+    color: "from-violet-400 to-indigo-500",
+    description: "Converting script text into high-quality artificial voice and audio streams."
+  },
+  {
+    name: "System Design",
+    level: 90,
+    category: "Core",
+    icon: "🏗️",
+    color: "from-cyan-500 to-blue-600",
+    description: "Decomposing problems from first principles and designing modular, scalable architectures."
+  },
+  {
+    name: "JWT",
+    level: 90,
+    category: "Security",
+    icon: "🔑",
+    color: "from-orange-500 to-red-600",
+    description: "Implementing secure session tokens and role-based stateless user authorization."
+  },
+  {
+    name: "OIDC",
+    level: 85,
+    category: "Security",
+    icon: "🔒",
+    color: "from-red-500 to-rose-600",
+    description: "Integrating OpenID Connect protocol for secure and standardized identity federation."
+  },
+  {
+    name: "RBAC",
+    level: 90,
+    category: "Security",
+    icon: "🛡️",
+    color: "from-blue-600 to-indigo-700",
+    description: "Designing fine-grained Role-Based Access Control policies for API security."
+  },
+  {
+    name: "Docker",
+    level: 80,
+    category: "Tools/DevOps",
+    icon: "🐳",
+    color: "from-blue-400 to-cyan-500",
+    description: "Containerizing applications for reliable and consistent execution across environments."
+  },
+  {
+    name: "Vercel",
+    level: 90,
+    category: "Tools/DevOps",
+    icon: "▲",
+    color: "from-neutral-700 to-neutral-900",
+    description: "Deploying and hosting performant serverless frontend applications."
+  },
+  {
+    name: "Railway",
+    level: 85,
+    category: "Tools/DevOps",
+    icon: "🚂",
+    color: "from-slate-600 to-slate-800",
+    description: "Deploying, scaling, and managing cloud-hosted backend services and databases."
+  },
+  {
+    name: "Vite",
+    level: 90,
+    category: "Tools/DevOps",
+    icon: "⚡",
+    color: "from-amber-400 to-purple-600",
+    description: "Configuring ultra-fast development tooling and optimized production builds."
+  },
+  {
+    name: "Git",
+    level: 90,
+    category: "Tools/DevOps",
+    icon: "📁",
+    color: "from-orange-600 to-red-500",
+    description: "Managing codebase history, feature branching, and collaborative version control."
+  }
 ];
 
 const services = [
@@ -213,22 +397,19 @@ const About = () => {
               <User className="mr-3 text-purple-500 animate-pulse" /> Who I Am
             </h3>
             <p className={`mb-6 transition-all duration-500 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              I am a technology enthusiast, problem solver, and lifelong learner, passionate about exploring the intersection of AI, cybersecurity, full-stack development, and algorithmic problem-solving. With a strong foundation in both software development and system analysis, I focus on building efficient, scalable, and secure digital solutions.
+              I hear a problem and I can't stop until I've broken it down to its lowest level and rebuilt it into something that actually works.
             </p>
             <p className={`mb-6 transition-all duration-500 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              My journey in tech started with a curiosity for how things work, evolving into a deeper understanding of software engineering, machine learning, and cybersecurity. Over time, I have worked on projects ranging from AI-driven applications to secure web platforms, always striving to combine logic, efficiency, and creativity in my work.
+              That's how GridLock started — a teacher's offhand remark about authentication led me to think about pixels, RGB channels, and probability spaces. The result was a cryptographic grid-based passwordless auth system harder to crack than most password managers. That instinct — find the root, design from first principles, then build — runs through everything I make.
             </p>
             <p className={`mb-6 transition-all duration-500 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              I enjoy tackling complex challenges, whether it's optimizing algorithms, improving system security, or developing intelligent applications. I strongly believe in continuous learning and keeping up with the latest advancements to refine my skills and contribute to meaningful projects.
+              I'm a final-year Electronics & Computer Science engineer at Mumbai University (9.86 CGPA) building at the intersection of full-stack systems, AI automation, and security architecture. My work includes a biometric + blockchain voting platform, an AI content pipeline that goes from script to voice to generated scenes autonomously, and a production LMS with real-time RBAC serving an active technical club.
             </p>
             <p className={`mb-6 transition-all duration-500 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              Beyond coding, I actively research emerging technologies, contribute to open-source, and share insights through technical discussions and writing. My approach is rooted in critical thinking, structured problem-solving, and a desire to innovate responsibly.
-            </p>
-            <p className="text-purple-500 transition-all duration-500 opacity-0 translate-y-4 italic border-l-4 border-purple-500 pl-4">
-              "Superposition of ideas, collapsing into action when observed. ✨"
+              I use AI as a technical partner — for execution speed, not for thinking. The system design, the architecture decisions, the problem decomposition — that part is mine.
             </p>
             <p className={`transition-all duration-500 opacity-0 translate-y-4 font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              <span className="text-purple-400">📌</span> Always learning, always building—one challenge at a time. Let's create something impactful. <span className="text-blue-400 animate-bounce inline-block">🚀</span>
+              Open to freelance work, internships, and final-year collaborations. Reach out at <a href="mailto:skarsan02@gmail.com" className="text-purple-500 hover:underline">skarsan02@gmail.com</a>
             </p>
           </div>
 

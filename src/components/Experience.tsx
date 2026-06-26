@@ -45,7 +45,7 @@ const Experience = () => {
     },
     {
       title: "Portfolio Website",
-      role: "Frontend Developer",
+      role: "Full-Stack Engineer & AI Pipeline Builder",
       description: "Designed and developed a personal portfolio website using modern frontend technologies including React, TypeScript, and Tailwind CSS. Implemented dark mode, animations, and responsive layout.",
       shortDescription: "Designed and built a personal portfolio with modern tech stack and animations.",
       highlights: [

@@ -1,14 +1,14 @@
 export const HERO_ROLES = [
-  "Frontend Developer",
-  "UI/UX Designer",
-  "Problem Solver",
-  "Creative Thinker"
+  "Systems Thinker",
+  "AI Pipeline Builder",
+  "Full-Stack Engineer",
+  "Problem Solver"
 ];
 
 export const PROFILE_LINKS = {
   github: "https://github.com/Arsan-sk",
-  linkedin: "https://linkedin.com/in/arsan-shaikh",
-  email: "mailto:arsanshaikh@example.com" // Replace with actual email if known or keep placeholder
+  linkedin: "https://linkedin.com/in/arsan-sk",
+  email: "mailto:skarsan02@gmail.com"
 };
 
 // Centralized Projects Data - Edit this array to update projects across the site
@@ -54,8 +54,8 @@ export const projectsData: Project[] = [
   },
   {
     id: 3,
-    title: "QuizKTC App",
-    description: "A comprehensive quiz app that covers a wide range of topics, including history, science, math, and more.",
+    title: "QuizKTC",
+    description: "An advanced proctored quiz platform for campus with teacher analytics dashboard.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
     tags: ["Node.js", "Postgres", "Tailwind CSS", "TypeScript"],
     category: "Web Development",
@@ -66,10 +66,10 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: "Blockchain - Vote Rakshak",
-    description: "A secure cryptocurrency wallet with multi-currency support, transaction history, and real-time market data.",
+    title: "VoteRakshak",
+    description: "A biometric + blockchain e-voting platform. React/Vite + Node/Express + Supabase + Solidity/Hardhat + Socket.io. Deployed on Vercel (frontend) and Railway (backend).",
     image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
-    tags: ["React Native", "Web3.js", "Ethereum", "Bitcoin"],
+    tags: ["React", "Vite", "Node.js", "Express", "Supabase", "Solidity", "Hardhat", "Socket.io"],
     category: "Blockchain",
     github: "https://github.com/Arsan-sk/VoteRakshak",
     demo: "https://vote-rakshak-sk.vercel.app/",
@@ -78,10 +78,10 @@ export const projectsData: Project[] = [
   },
   {
     id: 5,
-    title: "Learning Management System - For Club",
-    description: "A Learning Management System for clubs that helps them manage their education flow between members and Lead Teachers",
+    title: "ElitLMS",
+    description: "A full-stack role-based LMS (Admin, Domain Lead, Member) with assignments, quizzes, leaderboard, and real-time notifications. Next.js + Supabase.",
     image: "/images/LMS.png",
-    tags: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+    tags: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
     category: "Web Development",
     github: "https://github.com/Arsan-sk/LMS",
     demo: "https://elite-lms-xi.vercel.app/",
